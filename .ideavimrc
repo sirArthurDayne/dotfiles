@@ -1,0 +1,25 @@
+"My vimconfig File for JetBrains IDEs
+
+set noerrorbells
+set relativenumber
+set clipboard+=unnamedplus
+let mapleader = " "
+
+"tab settings
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set nowrap
+
+"El mapeo mas util del mundo
+inoremap jk <ESC>
+
+"desabilita las arrow keys. Aprende vim -__-
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+imap <Up> <Nop>
+imap <Down> <Nop>
+imap <Left> <Nop>
+imap <Right> <Nop>
