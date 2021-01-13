@@ -86,16 +86,6 @@ nnoremap <Tab><Right> :vertical resize -5<CR>
 "better find&replace in file
 nnoremap S :%s/<C-r><C-w>//g<left><left><left>
 
-"-----Vim-fugitive setup
-"git status
-nmap <leader>gs :G<CR>
-"git checkout
-"nmap <leader>gc :GCheckout<CR>
-"diffget to the right
-nmap <leader>gh :diffget //3<CR>
-"diffget to the left
-nmap <leader>gf :diffget //2<CR>
-
 "-----GitGutter setup
 highlight GitGutterAdd    guifg=#009900 ctermfg=2
 highlight GitGutterChange guifg=#bbbb00 ctermfg=3
