@@ -6,7 +6,7 @@ Nvim, TMUX setup for development inside Powershell and WSL2 inside WindowsTermin
 
 ## Main Goal
 
-- Provide a `drag & drop` setup for me in Windows 10.
+- Provide a `drag & drop` setup for me coding in Windows 10.
 
 ## Requirements
 
@@ -23,6 +23,8 @@ Nvim, TMUX setup for development inside Powershell and WSL2 inside WindowsTermin
 
 ## Content
 
+### Files
+
 - `settings.json`: config file [Windows Terminal](https://github.com/Microsoft/Terminal)
 - `tmux.conf.local`: config file for tmux. based on [TheAltF4Stream](https://github.com/awesome-streamers/awesome-streamerrc/blob/master/TheAltF4Stream/.tmux.conf.local)
 - `profile.ps1`: config file for powershell.[ohmyposh](https://github.com/JanDeDobbeleer/oh-my-posh) is required!
@@ -31,7 +33,13 @@ Nvim, TMUX setup for development inside Powershell and WSL2 inside WindowsTermin
 - `ideavimrc`: JetBrains IDE config file vi extension.[IdeaVim](https://github.com/JetBrains/ideavim)
 - `init.vim`: config for my favorite text editor [Nvim](https://github.com/neovim/neovim)
 - `coc-settings.json`: config file for [Conquer of Completion](https://github.com/neoclide/coc.nvim)
+
+### Directories
+
 - `fonts/`: directory with some fonts (NF and PowerLine Glyphs) compatible. `.ttf` extension.
+- `plugin/`: directory that hold config files for some nvim pluggin.
+
+> NOTE: see my currently pluggin list inside my init.vim file.
 
 ## Installation & Usage
 
@@ -49,12 +57,12 @@ look at the code and remove/change the things you don’t want or need.
 
 ### Neovim Setup
 
--For WLS2:
+-For WSL2:
 
 ```sh
 
 mkdir -p ~/.config/nvim/
-cp init.vim ~/.config/nvim/init.vim
+ln -s init.vim ~/.config/nvim/init.vim
 cp coc-settings.json ~/.config/nvim/coc-settings.json
 
 ```
@@ -80,3 +88,7 @@ for proper load.
 ### Other Files Setup
 
 Link the rest of the files to the `/HOME` directory inside your WSL2 instance.
+
+### Future Plans
+
+- Create a script that makes path or links for faster setup.
