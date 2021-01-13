@@ -7,12 +7,13 @@ Nvim, TMUX setup for development inside Powershell and WSL2 inside WindowsTermin
 ## Main Goal
 
 - Provide a `drag & drop` setup for me coding in Windows 10.
+- Provide a simple script `install` for easy neovim structure and file linking.
 
 ## Requirements
 
 1. [Chocolatey](https://chocolatey.org) or some sort of package manager.
 2. [Windows Terminal](https://github.com/Microsoft/Terminal)
-3. [WLS2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+3. [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
 ## Extra Requirements(Optional)
 
@@ -41,6 +42,11 @@ Nvim, TMUX setup for development inside Powershell and WSL2 inside WindowsTermin
 
 > NOTE: see my currently pluggin list inside my init.vim file.
 
+### Scripts
+
+- `install`: script that handles all linking of nvim files from my dotfiles to
+the `~/.config/nvim` path. based on [ThePrimeagen](https://github.com/awesome-streamers/awesome-streamerrc/blob/master/ThePrimeagen/install)
+
 ## Installation & Usage
 
 **WARNING** Try this at your own risk. Read the code before hand and make backups
@@ -57,7 +63,7 @@ look at the code and remove/change the things you don’t want or need.
 
 ### Neovim Setup
 
--For WSL2:
+#### For WSL2
 
 ```sh
 
@@ -67,7 +73,13 @@ cp coc-settings.json ~/.config/nvim/coc-settings.json
 
 ```
 
--For Powershell:
+-alternative: run the script
+
+```sh
+./install
+```
+
+#### For Powershell
 
 ```sh
 
@@ -91,4 +103,4 @@ Link the rest of the files to the `/HOME` directory inside your WSL2 instance.
 
 ### Future Plans
 
-- Create a script that makes path or links for faster setup.
+- [x] Create a script that makes path and links for faster setup in WSL2.
