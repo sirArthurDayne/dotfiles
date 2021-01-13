@@ -10,6 +10,7 @@ Nvim, TMUX setup for development inside Powershell and WSL2 inside WindowsTermin
 
 1. [Chocolatey](https://chocolatey.org) or some sort of package manager.
 2. [Windows Terminal](https://github.com/Microsoft/Terminal)
+3. [WLS2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
 ## Extra Requirements(Optional)
 
