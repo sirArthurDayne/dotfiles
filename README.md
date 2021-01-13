@@ -2,7 +2,7 @@
 
 Nvim, TMUX setup for development inside Powershell and WSL2 inside WindowsTerminal.
 
-![preview][sirArthurDayne]
+![sirArthurDayne](preview.png)
 
 ## Main Goal
 
