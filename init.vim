@@ -86,13 +86,6 @@ nnoremap <Tab><Right> :vertical resize -5<CR>
 "better find&replace in file
 nnoremap S :%s/<C-r><C-w>//g<left><left><left>
 
-"---- NERDTree Setup
-map <C-n> :NERDTreeToggle<CR>
-let g:NERDTreeWinPos = "right"
-let NERDTreeShowHidden=1
-autocmd vimenter * NERDTree "nerdtree abre por defecto
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif "sino hay ventanas excepto nerdtree, cierra vim
-
 "----- vim-polyglot setup
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
@@ -182,40 +175,6 @@ nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 "Auto add golang import when missing + delete it when not using it
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
-
-"-----CLOSE-TAGS Setup
-" These are the file extensions where this plugin is enabled.
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsp,*.vue'
-" This will make the list of non-closing tags self-closing in the specified files.
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.jsp,*.vue'
-" These are the file types where this plugin is enabled.
-let g:closetag_filetypes = 'html,xhtml,phtml,jsp,vue'
-" This will make the list of non-closing tags self-closing in the specified files.
-let g:closetag_xhtml_filetypes = 'xhtml,jsx,jsp,vue'
-" integer value [0|1]
-" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
-let g:closetag_emptyTags_caseSensitive = 1
-" Disables auto-close if not in a "valid" region (based on filetype)
-let g:closetag_regions = {
-    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-    \ 'javascript.jsx': 'jsxRegion',
-    \ }
-" Shortcut for closing tags, default is '>'
-let g:closetag_shortcut = '>'
-" Add > at current position without closing the current tag, default is ''
-"default
-"let g:closetag_close_shortcut = '<leader>>'
-let g:closetag_close_shortcut = '.>'
-
-"----FZF setup
-nnoremap <C-p> :GFiles<CR>
-let g:fzf_layout = { 'window': {'width': 0.8, 'height': 0.8}}
-let $FZF_DEFAULT_OPTS='--reverse'
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit'
-  \}
 
 "-----Extra funcionality
 function! TrimWhiteSpace()
