@@ -1,0 +1,26 @@
+{
+    "diagnostic.errorSign": "",
+    "diagnostic.infoSign": "﯍",
+    "diagnostic.hintSign": "",
+    "diagnostic.virtualText": true,
+    "pairs.enableCharacters": ["(","[","{","'","\"","`"],
+    "suggest.noselect": false,
+    "coc.preferences.formatOnSaveFileTypes": [
+                         "javascript",
+                         "json",
+                         "css",
+                         "html",
+                         "markdown",
+                         "C/C++"
+    ],
+    "markdownlint.config":
+    {
+        "default": true,
+        "line_length": false
+    },
+    "emmet.includeLanguages":
+    {
+        "jsp": "html"
+    }
+
+}
