@@ -2,6 +2,8 @@
 
 Nvim, TMUX setup for development inside Powershell and WSL2 inside WindowsTerminal.
 
+![sirArthurDayne][preview]
+
 ## Main Goal
 
 - Provide a `drag & drop` setup for me in Windows 10.
