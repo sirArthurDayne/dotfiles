@@ -34,6 +34,7 @@ Nvim, TMUX setup for development inside Powershell and WSL2 inside WindowsTermin
 - `ideavimrc`: JetBrains IDE config file vi extension.[IdeaVim](https://github.com/JetBrains/ideavim)
 - `init.vim`: config for my favorite text editor [Nvim](https://github.com/neovim/neovim)
 - `coc-settings.json`: config file for [Conquer of Completion](https://github.com/neoclide/coc.nvim)
+- `.ripgreprc`: config file for [RipGrep](https://github.com/BurntSushi/ripgrep)
 
 ### Directories
 

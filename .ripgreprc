@@ -1,0 +1,14 @@
+#Don't let ripgrep vomit really long lines to my terminal, and show a preview.
+--max-columns=150
+--max-columns-preview
+
+#exclude some dirs
+--glob=!**/*.pem
+--glob=!git/*
+--glob=!**/node_modules/**
+
+# case sensititive search
+--smart-case
+
+# Set the colors.
+--colors=line:style:bold
