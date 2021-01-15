@@ -9,8 +9,12 @@
 " Github: https://github.com/sirArthurDayne/dotfiles
 " Maintainer: sirArthurDayne/krosis
 " **DISCLAMER**:My config should be the same i use on Powershell Windows (i Hope...)
-call plug#begin('~/.config/nvim/plugged')
 
+if has('win32')
+    call plug#begin('~/Appdata/Local/nvim/plugged')
+elseif has('unix')
+    call plug#begin('~/.config/nvim/plugged')
+endif
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }    "file explorer
 Plug 'sheerun/vim-polyglot'                              "syntax hightlight
 Plug 'neoclide/coc.nvim', {'branch': 'release'}          "syntax autocomplete
