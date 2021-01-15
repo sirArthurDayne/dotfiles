@@ -93,9 +93,8 @@ alias windhome='cd /mnt/d/'
 alias windevhome='cd /mnt/d/Dev/'
 alias winduni='cd /mnt/d/vainas\ de\ la\ U/'
 alias windvisual='cd /mnt/d/Dev/Proyects/VisualProyects/'
-alias windevOpenGL='cd /mnt/d/Dev/Proyects/VisualProyects/OpenglPlayground/'
-alias zconfig='nvim ~/.zshrc'
-alias nvimconfig='nvim ~/.config/nvim/init.vim'
+alias zconfig='nvim ~/personal/dotfiles/.zshrc'
+alias nvimconfig='nvim ~/personal/dotfiles/init.vim'
 alias cl='clear'
 # export MANPATH="/usr/local/man:$MANPATH"
 

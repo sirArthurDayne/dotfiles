@@ -1,4 +1,4 @@
-#Presentacion 
+#Presentacion
 #le hace source al bashrc al ser modificado
 
 
@@ -15,9 +15,8 @@ alias windhome='cd /mnt/d/'
 alias windevhome='cd /mnt/d/Dev/'
 alias winduni='cd /mnt/d/vainas\ de\ la\ U/'
 alias windvisual='cd /mnt/d/Dev/Proyects/VisualProyects/'
-alias windevOpenGL='cd /mnt/d/Dev/Proyects/VisualProyects/OpenglPlayground/'
-alias bashconfig='nvim ~/.bashrc'
-alias nvimconfig='nvim ~/.config/nvim/init.vim'
+alias bashconfig='nvim ~/personal/dotfiles/.bashrc'
+alias nvimconfig='nvim ~/personal/dotfiles/init.vim'
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
