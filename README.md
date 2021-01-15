@@ -13,7 +13,8 @@ Nvim, TMUX setup for development inside Powershell and WSL2 inside WindowsTermin
 
 1. [Chocolatey](https://chocolatey.org) or some sort of package manager.
 2. [Windows Terminal](https://github.com/Microsoft/Terminal)
-3. [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+3. [Neovim](https://github.com/neovim/neovim)
+4. [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
 ## Extra Requirements(Optional)
 
@@ -89,9 +90,6 @@ cp init.vim ~/Appdata/Local/nvim/init.vim
 cp coc-settings.json ~/Appdata/Local/nvim/coc-settings.json
 
 ```
-
-Then go inside `init.vim` and change the path from `call plug#begin('~/.config/nvim/plugged')`
-to `callplug#begin('~/Appdata/Local/nvim/plugged')`
 
 Execute `nvim` inside any shell type`:PLugInstall`, after that, restart nvim
 for proper load.
