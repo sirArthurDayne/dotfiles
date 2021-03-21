@@ -3,6 +3,7 @@
     "diagnostic.infoSign": "﯍",
     "diagnostic.hintSign": "",
     "diagnostic.virtualText": true,
+    "list.selectedSignText": " ",
     "pairs.enableCharacters": ["(","[","{","'","\"","`"],
     "suggest.noselect": false,
     "coc.preferences.formatOnSaveFileTypes": [
