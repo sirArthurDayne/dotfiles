@@ -108,3 +108,13 @@ augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
 augroup END
+
+"----Cheatsh trick
+function Cheat(query)
+  let query = 'cheat.sh/' . a:query
+  execute 'split | term curl ' . query
+  execute 'resize ' . string(&lines/3)
+endfunction
+
+command! -nargs=1 CheatSh call Cheat(<q-args>)
+nnoremap <leader>ch :CheatSh <C-R>=&filetype<CR>/
