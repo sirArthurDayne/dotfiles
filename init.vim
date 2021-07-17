@@ -25,13 +25,15 @@ Plug 'alvan/vim-closetag'                                "tags autocomplete
 Plug 'tpope/vim-surround'                                "allow sorrounding
 Plug 'tpope/vim-fugitive'                                "Git Integration on vim
 Plug 'tpope/vim-commentary'                              "allow comments blocks
-"telescope
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-"telescope extensions
-" Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-Plug 'fannheyward/telescope-coc.nvim'
+if has("nvim")
+    "telescope
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    "telescope extensions
+    " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+    Plug 'fannheyward/telescope-coc.nvim'
+end
 "themes
 Plug 'dikiaap/minimalist'                                "main theme
 Plug 'ayu-theme/ayu-vim'                                 "second theme
