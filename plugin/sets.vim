@@ -28,8 +28,8 @@ set wildmenu
 set noswapfile
 set nobackup
 set nowritebackup
-set undodir=~/.config/nvim/undodir
-set undofile
+"set undodir=~/.config/nvim/undodir
+"set undofile
 
 "Tab settings
 set tabstop=4

@@ -25,11 +25,14 @@ Plug 'alvan/vim-closetag'                                "tags autocomplete
 Plug 'tpope/vim-surround'                                "allow sorrounding
 Plug 'tpope/vim-fugitive'                                "Git Integration on vim
 Plug 'tpope/vim-commentary'                              "allow comments blocks
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }      "fuzzy file finder
-Plug 'junegunn/fzf.vim'
-"Plug 'stsewd/fzf-checkout.vim'
-"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
+"telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+"telescope extensions
+" Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'fannheyward/telescope-coc.nvim'
+"themes
 Plug 'dikiaap/minimalist'                                "main theme
 Plug 'ayu-theme/ayu-vim'                                 "second theme
 " Plug 'whatyouhide/vim-gotham'
@@ -109,6 +112,11 @@ augroup highlight_yank
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
 augroup END
 
+augroup WrapInMarkdown
+  autocmd!
+  autocmd FileType markdown setlocal wrap
+augroup END
+
 "----Cheatsh trick
 function Cheat(query)
   let query = 'cheat.sh/' . a:query
@@ -118,3 +126,6 @@ endfunction
 
 command! -nargs=1 CheatSh call Cheat(<q-args>)
 nnoremap <leader>ch :CheatSh <C-R>=&filetype<CR>/
+
+"load telescope setup
+lua require("krosis")
