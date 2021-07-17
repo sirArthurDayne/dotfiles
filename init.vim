@@ -32,7 +32,9 @@ if has("nvim")
     Plug 'nvim-telescope/telescope.nvim'
     "telescope extensions
     " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+    " Plug 'nvim-telescope/telescope-fzy-native.nvim'
     Plug 'fannheyward/telescope-coc.nvim'
+    Plug 'kyazdani42/nvim-web-devicons'
 endif
 "themes
 Plug 'dikiaap/minimalist'                                "main theme
@@ -128,6 +130,3 @@ endfunction
 
 command! -nargs=1 CheatSh call Cheat(<q-args>)
 nnoremap <leader>ch :CheatSh <C-R>=&filetype<CR>/
-
-"load telescope setup
-lua require("krosis")
