@@ -33,7 +33,7 @@ if has("nvim")
     "telescope extensions
     " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
     Plug 'fannheyward/telescope-coc.nvim'
-end
+endif
 "themes
 Plug 'dikiaap/minimalist'                                "main theme
 Plug 'ayu-theme/ayu-vim'                                 "second theme
