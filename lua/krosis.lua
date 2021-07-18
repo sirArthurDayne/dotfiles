@@ -38,4 +38,16 @@ mappings.get_dotfiles = function()
     require('telescope.builtin').git_files(options)
 end
 
+--add delete branch feature to git_branches
+mappings.git_branches = function()
+    local options = {
+        attach_mappings = function(prompt_buffer, map)
+            map('i', '<c-d>', require('telescope.actions').git_delete_branch)
+            map('n', '<c-d>', require('telescope.actions').git_delete_branch)
+            return true
+        end
+    }
+    require('telescope.builtin').git_branches(options)
+end
+
 return mappings
