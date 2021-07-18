@@ -31,11 +31,12 @@ if has("nvim")
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     "telescope extensions
+    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'branch':'main', 'do': 'make' }
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
     Plug 'fannheyward/telescope-coc.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
     "tree-sitter
-    "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 endif
 "themes
 Plug 'dikiaap/minimalist'                                "main theme

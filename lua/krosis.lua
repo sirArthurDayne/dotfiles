@@ -1,7 +1,6 @@
 local action_state = require('telescope.actions.state') --runtime (Plugin) exists somewhere as lua/telescope/actions/state.lua
 require('telescope').setup{
     defaults = {
-        file_sorter = require('telescope.sorters').get_fzy_sorter,
         prompt_prefix = "$ ",
         selection_caret = "> ",
         mappings = {
@@ -10,15 +9,20 @@ require('telescope').setup{
             }
         },
         extensions = {
-            fzy_native = {
-            override_generic_sorter = false,
-            override_file_sorter = true,
+            fzf = {
+            fuzzy = true,                    -- false will only do exact matching
+            override_generic_sorter = false, -- override the generic sorter
+            override_file_sorter = true,     -- override the file sorter
             }
+            -- fzy_native = {
+            -- override_generic_sorter = false,
+            -- override_file_sorter = true,
+            -- }
         }
     }
 }
---require('telescope').load_extension('fzf')
-require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('fzf')
+--require('telescope').load_extension('fzy_native')
 require('telescope').load_extension('coc')
 
 --remaps table
@@ -30,7 +34,7 @@ mappings.current_buffer = function()
 end
 
 mappings.get_dotfiles = function()
-    local options = {prompt_title = "< DOTFILES >", cwd="~/personal/dotfiles", hidden=true}
+    local options = {prompt_title = "< DOTFILES >", cwd=vim.env.DOTFILES, hidden=true}
     require('telescope.builtin').git_files(options)
 end
 
