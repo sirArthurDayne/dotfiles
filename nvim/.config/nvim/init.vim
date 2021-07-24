@@ -15,12 +15,6 @@ if has('win32')
 elseif has('unix')
     call plug#begin('~/.config/nvim/plugged')
 endif
-Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }    "file explorer
-Plug 'sheerun/vim-polyglot'                              "syntax hightlight
-Plug 'neoclide/coc.nvim', {'branch': 'release'}          "syntax autocomplete
-Plug 'vim-airline/vim-airline'                           "Git status bar
-Plug 'airblade/vim-gitgutter'                            "Git number-column changes
-Plug 'ryanoasis/vim-devicons'                            "icons for files(need nerdfont)
 Plug 'alvan/vim-closetag'                                "tags autocomplete
 Plug 'tpope/vim-surround'                                "allow sorrounding
 Plug 'tpope/vim-fugitive'                                "Git Integration on vim
@@ -33,7 +27,6 @@ if has("nvim")
     "telescope extensions
     Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'branch':'main', 'do': 'make' }
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
-    Plug 'fannheyward/telescope-coc.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
     "tree-sitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -41,23 +34,9 @@ endif
 "themes
 Plug 'dikiaap/minimalist'                                "main theme
 Plug 'ayu-theme/ayu-vim'                                 "second theme
-" Plug 'whatyouhide/vim-gotham'
 call plug#end()
 
 "LSP setup
-let g:coc_global_extensions = [
-                            \ 'coc-html',
-                            \ 'coc-css',
-                            \ 'coc-emmet',
-                            \ 'coc-pairs',
-                            \ 'coc-prettier',
-                            \ 'coc-tsserver',
-                            \ 'coc-markdownlint',
-                            \ 'coc-vetur',
-                            \ 'coc-go',
-                            \]
-
-
 "vertically center document when insert mode
 autocmd InsertEnter * norm zz
 

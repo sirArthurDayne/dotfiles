@@ -23,7 +23,6 @@ require('telescope').setup{
 }
 require('telescope').load_extension('fzf')
 --require('telescope').load_extension('fzy_native')
-require('telescope').load_extension('coc')
 
 --remaps table
 local mappings = {}
@@ -48,6 +47,12 @@ mappings.git_branches = function()
         end
     }
     require('telescope.builtin').git_branches(options)
+end
+
+--file browser
+mappings.file_browser = function()
+    local options = require('telescope.themes').get_ivy({prompt_title = "< BROWSER >", layout_config={height=20}, hidden=true})
+    require('telescope.builtin').file_browser(options)
 end
 
 return mappings
