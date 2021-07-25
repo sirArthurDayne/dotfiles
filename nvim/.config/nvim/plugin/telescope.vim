@@ -7,5 +7,6 @@ nnoremap <C-n> :lua require('krosis.telescope').file_browser()<CR>
 nnoremap <leader>gb :lua require('krosis.telescope').git_branches() <CR>
 nnoremap <C-_> <cmd>lua require('krosis.telescope').current_buffer()<CR>
 nnoremap <F6> <cmd>lua require('krosis.telescope').get_dotfiles()<CR>
+nnoremap <leader>ph <cmd>lua require('krosis.telescope').help_tags()<CR>
 "easy source lua package
 nnoremap <F4> :lua package.loaded.krosis = nil <CR>:source ~/.config/nvim/init.vim <CR>

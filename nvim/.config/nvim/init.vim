@@ -30,6 +30,12 @@ if has("nvim")
     Plug 'kyazdani42/nvim-web-devicons'
     "tree-sitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    "LSP
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'glepnir/lspsaga.nvim'
+    Plug 'nvim-lua/completion-nvim'
+    "Statusline
+    Plug 'hoob3rt/lualine.nvim'
 endif
 "themes
 Plug 'dikiaap/minimalist'                                "main theme

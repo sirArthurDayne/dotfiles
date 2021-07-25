@@ -18,8 +18,7 @@ require'nvim-treesitter.configs'.setup {
     "go",
     "html",
     "javascript",
-    "css",
-    "vue"
+    "css"
   },
 }
 EOF
