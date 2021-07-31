@@ -21,8 +21,17 @@ set smartcase
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 "better text completion
+set path+=**
 set wildmode=longest,list,full
 set wildmenu
+" Ignore files
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=**/coverage/*
+set wildignore+=**/node_modules/*
+set wildignore+=**/android/*
+set wildignore+=**/ios/*
+set wildignore+=**/.git/*
 
 "history and intermediate files
 set noswapfile

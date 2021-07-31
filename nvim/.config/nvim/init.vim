@@ -42,9 +42,17 @@ Plug 'dikiaap/minimalist'                                "main theme
 Plug 'ayu-theme/ayu-vim'                                 "second theme
 call plug#end()
 
-"LSP setup
 "vertically center document when insert mode
 autocmd InsertEnter * norm zz
+"keep cursor at center
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+"undo break points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ( (<c-g>u
+inoremap [ [<c-g>u
 
 "My favorite mappings ^__^
 let mapleader = " "
@@ -83,7 +91,8 @@ nnoremap <Tab><Left> :vertical resize +5<CR>
 nnoremap <Tab><Right> :vertical resize -5<CR>
 "better find&replace in file
 nnoremap S :%s/<C-r><C-w>//g<left><left><left>
-
+"make yanking great again
+nnoremap Y y$
 "-----Extra funcionality
 function! TrimWhiteSpace()
     let l:save = winsaveview()

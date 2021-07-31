@@ -1,2 +1,4 @@
 #ignore plugged folder when stowing files
 nvim/.config/nvim/plugged/
+#ignore wallpapers
+wallpapers/

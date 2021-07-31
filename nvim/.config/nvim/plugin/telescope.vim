@@ -10,3 +10,5 @@ nnoremap <F6> <cmd>lua require('krosis.telescope').get_dotfiles()<CR>
 nnoremap <leader>ph <cmd>lua require('krosis.telescope').help_tags()<CR>
 "easy source lua package
 nnoremap <F4> :lua package.loaded.krosis = nil <CR>:source ~/.config/nvim/init.vim <CR>
+"easy bg change with telescope
+nnoremap <leader>cb <cmd>lua require('krosis.telescope').bg_select()<CR>
