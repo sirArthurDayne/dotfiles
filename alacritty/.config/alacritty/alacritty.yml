@@ -1,0 +1,81 @@
+env:
+  TERM: alacritty
+#layout
+window:
+  # startup_mode: Maximized
+  padding:
+    x: 2
+    y: 2
+  dinamic_padding: false
+
+#Font setup
+font:
+  normal:
+    family: CaskaydiaCove NF
+    style: Regular
+  bold:
+    family: CaskaydiaCove Nerd Font
+    style: Bold
+  italic:
+    family: JetbrainsMono Nerd Font
+    style: Italic
+  #font size
+  size: 11.0
+  #char offset
+  offset:
+    x: 0
+    y: 1
+  glyph_offset:
+    x: 0
+    y: 0
+
+#cursor mod
+cursor:
+  style:
+    blinking: Always
+  blinking_interval: 500
+#COLOR SETUP
+colors:
+  cursor:
+    # text:
+    cursor: '#67ff4f'
+  vi_mode_cursor:
+    text: CellBackground
+    cursor: CellForeground
+  #Ayu mirage scheme
+  primary:
+    background: '#202734'
+    foreground: '#CBCCC6'
+    bright_foreground: '#f28779'
+  # Normal colors
+  normal:
+    black: '#191E2A'
+    red: '#FF3333'
+    green: '#BAE67E'
+    yellow: '#FFA759'
+    blue: '#73D0FF'
+    magenta: '#FFD580'
+    cyan: '#95E6CB'
+    white: '#C7C7C7'
+  # Brightened
+  bright:
+    black: '#686868'
+    red: '#F27983'
+    green: '#A6CC70'
+    yellow: '#FFCC66'
+    blue: '#5CCFE6'
+    magenta: '#FFEE99'
+    cyan: '#95E6CB'
+    white: '#FFFFFF'
+
+#background
+background_opacity: 1
+
+#KEYMAPS
+key_bindings:
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }
+  - { key: Key0, mods: Control|Shift, action: ResetFontSize }
+  - { key: Equals, mods: Control, action: IncreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
+  - { key: N, mods: Control|Shift, action: SpawnNewInstance }
