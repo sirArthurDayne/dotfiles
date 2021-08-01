@@ -2,3 +2,6 @@
 nvim/.config/nvim/plugged/
 #ignore wallpapers
 wallpapers/
+#ignore zsh addons folder and dump
+zsh/.config/zsh/scripts/
+zsh/.config/zsh/.zcompdump
