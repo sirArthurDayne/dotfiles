@@ -47,7 +47,22 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
--- This is used later as the default terminal and editor to run.
+--useless gaps
+beautiful.useless_gap = 3
+beautiful.gap_single_client = true
+beautiful.font = "CaskaydiaCove NF 9"
+
+beautiful.bg_normal     = "#330044"
+beautiful.bg_focus      = "#997fa1"
+beautiful.bg_urgent     = "#ff0000"
+beautiful.bg_minimize   = "#444444"
+beautiful.bg_systray    = beautiful.bg_normal
+
+beautiful.fg_normal     = "#aaaaaa"
+beautiful.fg_focus      = "#ffffff"
+beautiful.fg_urgent     = "#ffffff"
+beautiful.fg_minimize   = "#ffffff"
+
 browser = "firefox"
 terminal = "alacritty"
 editor = os.getenv("EDITOR") or "vim"
@@ -263,6 +278,7 @@ globalkeys = gears.table.join(
               {description = "focus the next screen", group = "screen"}),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
               {description = "focus the previous screen", group = "screen"}),
+
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
     awful.key({ modkey,           }, "Tab",
@@ -315,6 +331,8 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "r",     function () awful.util.spawn("dmenu_run") end,
               {description = "run dmenu", group = "launcher"}),
 
+    awful.key({ modkey },            "e",     function () awful.util.spawn("nautilus") end,
+              {description = "run nautilus", group = "launcher"}),
     awful.key({ modkey }, "x",
               function ()
                   awful.prompt.run {
@@ -576,5 +594,5 @@ client.connect_signal("property::maximized", border_adjust)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 -- run feh and loads background
-awful.util.spawn_with_shell("feh --bg-fill --randomize --no-fehbg ~/.dotfiles/wallpapers/*")
-awful.util.spawn_with_shell("picom --config  $HOME/.config/picom/picom.conf")
+awful.util.spawn_with_shell("feh --bg-fill --randomize --no-fehbg $DOTFILES/wallpapers/*")
+awful.util.spawn_with_shell("picom --config  $XDG_CONFIG_HOME/picom/picom.conf")
