@@ -50,19 +50,21 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 --useless gaps
 beautiful.useless_gap = 3
 beautiful.gap_single_client = true
-beautiful.font = "CaskaydiaCove NF 10"
+beautiful.font = "CaskaydiaCove NF 9"
 
-beautiful.bg_normal     = "#000000"
-beautiful.bg_focus      = "#535d6c"
-beautiful.bg_urgent     = "#ff0000"
-beautiful.bg_minimize   = "#444444"
+beautiful.bg_normal     = "#282828"
+beautiful.bg_focus      = "#928374"
+beautiful.bg_urgent     = "#cc241d"
+beautiful.bg_minimize   = "#3c3836"
 beautiful.bg_systray    = beautiful.bg_normal
+beautiful.bg_cursor     = "#665c54"
+beautiful.bg_select     = "#458588"
 
-beautiful.fg_normal     = "#aaaaaa"
-beautiful.fg_focus      = "#ffffff"
+beautiful.fg_normal     = "#928374"
+beautiful.fg_focus      = "#282828"
 beautiful.fg_urgent     = "#ffffff"
-beautiful.fg_minimize   = "#ffffff"
-
+beautiful.fg_minimize   = "#a89984"
+beautiful.fg_cursor     = "#d5c4a1"
 
 beautiful.border_normal = "#000000"
 beautiful.border_focus  = "#535d6c"
