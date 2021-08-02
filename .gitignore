@@ -5,3 +5,5 @@ wallpapers/
 #ignore zsh addons folder and dump
 zsh/.config/zsh/scripts/
 zsh/.config/zsh/.zcompdump
+#ignore awesome theme repo
+awesome/.config/awesome/themes/

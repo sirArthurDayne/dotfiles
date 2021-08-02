@@ -50,10 +50,10 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 --useless gaps
 beautiful.useless_gap = 3
 beautiful.gap_single_client = true
-beautiful.font = "CaskaydiaCove NF 9"
+beautiful.font = "CaskaydiaCove NF 10"
 
-beautiful.bg_normal     = "#330044"
-beautiful.bg_focus      = "#997fa1"
+beautiful.bg_normal     = "#000000"
+beautiful.bg_focus      = "#535d6c"
 beautiful.bg_urgent     = "#ff0000"
 beautiful.bg_minimize   = "#444444"
 beautiful.bg_systray    = beautiful.bg_normal
@@ -63,10 +63,17 @@ beautiful.fg_focus      = "#ffffff"
 beautiful.fg_urgent     = "#ffffff"
 beautiful.fg_minimize   = "#ffffff"
 
-browser = "firefox"
-terminal = "alacritty"
-editor = os.getenv("EDITOR") or "vim"
-editor_cmd = terminal .. " -e " .. editor
+
+beautiful.border_normal = "#000000"
+beautiful.border_focus  = "#535d6c"
+beautiful.border_marked = "#91231c"
+
+local browser = "firefox"
+local terminal = "alacritty"
+local file_manager = "nautilus"
+local dmenu = "dmenu_run"
+local editor = os.getenv("EDITOR") or "vim"
+local editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -328,10 +335,10 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () awful.util.spawn("dmenu_run") end,
+    awful.key({ modkey },            "r",     function () awful.util.spawn(dmenu) end,
               {description = "run dmenu", group = "launcher"}),
 
-    awful.key({ modkey },            "e",     function () awful.util.spawn("nautilus") end,
+    awful.key({ modkey },            "e",     function () awful.util.spawn(file_manager) end,
               {description = "run nautilus", group = "launcher"}),
     awful.key({ modkey }, "x",
               function ()
@@ -579,7 +586,7 @@ client.connect_signal("mouse::enter", function(c)
 end)
 
 -- No border for maximized clients
-function border_adjust(c)
+local function border_adjust(c)
     if c.maximized then -- no borders if only 1 client visible
         c.border_width = 0
     elseif #awful.screen.focused().clients > 1 then

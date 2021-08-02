@@ -51,8 +51,39 @@ local on_attach = function(client, bufferNumber)
         '', -- TypeParameter
       }
 end
---lsp config
-local goplsbin='/home/krosis/go/bin/gopls'
+
+--lualsp config
+local sumneko_root_path = '/home/krosis/personal/github/lua-language-server'
+local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
+
+nvim_lsp.sumneko_lua.setup{
+    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+    settings = {
+        Lua = {
+            runtime = {
+                --tell the version of lua
+                version = 'LuaJIT',
+                --setup path to lua
+                path = vim.split(package.path, ';'),
+            },
+            diagnostics = {
+                --allow lua lsp to recognize 'vim' global
+                globals = {'vim'}
+            },
+            workspace = {
+                 -- Make the server aware of Neovim runtime files
+                library = {
+                    [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+                    [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+                },
+            }
+        }
+    },
+    on_attach = on_attach,
+}
+
+--golsp config
+local goplsbin='/home/krosis/golib/bin/gopls'
 nvim_lsp.gopls.setup{
     cmd = {goplsbin,"serve"},
     capabilities = protocol.make_client_capabilities(),
