@@ -23,9 +23,14 @@ _comp_options+=(globdots)
 # End of lines added by compinstall
 
 # default aliases
-alias ls='ls --color=auto'
-alias la='ls -lA'
+# alias ls='ls --color=auto'
+# alias la='ls -lA'
 alias cl='clear'
+# map 'exa' to 'ls'
+alias ls='exa -al --color=always --group-directories-first --icons' # my preferred listing
+alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first --icons'  # long format
+alias lt='exa -aT --color=always --group-directories-first' # tree listing
 # git aliases
 alias gs='git status'
 alias gl='git log'
