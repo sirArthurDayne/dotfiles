@@ -7,3 +7,10 @@ zsh/.config/zsh/scripts/
 zsh/.config/zsh/.zcompdump
 #ignore awesome theme repo
 awesome/.config/awesome/themes/
+awesome/.config/awesome/freedesktop/
+awesome/.config/awesome/lain/
+#awesome theme repo subfiles
+awesome/.config/awesome/rc.lua.backup
+awesome/.config/awesome/rc.lua.template
+awesome/.config/awesome/README.rst
+awesome/.config/awesome/ISSUE_TEMPLATE.md
