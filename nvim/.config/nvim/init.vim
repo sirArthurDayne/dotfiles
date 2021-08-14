@@ -28,6 +28,7 @@ if has("nvim")
     Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'branch':'main', 'do': 'make' }
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
+    " Plug 'nvim-telescope/telescope-media-files.nvim'
     "tree-sitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     "LSP

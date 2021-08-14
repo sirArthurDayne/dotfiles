@@ -74,7 +74,7 @@ mappings.bg_select = function()
     local options = require('telescope.themes').get_dropdown({
         prompt_title = "< BG SELECTOR >",
         previewer = false,
-        cwd = "~/.dotfiles/wallpapers",
+        cwd = "~/personal/github/wallpapers",
         layout_config={height=20},
         attach_mappings = function(prompt_buffer, map)
             function select_the_background(close)
