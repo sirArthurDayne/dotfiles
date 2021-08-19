@@ -1,6 +1,6 @@
-# dotfiles for WSL-2 and Powershell
+# dotfiles for ARCHLINUX
 
-Nvim, TMUX setup for development inside Powershell and WSL2 inside WindowsTerminal.
+Nvim, TMUX setup for development inside ArchLinux
 
 ![sirArthurDayne](preview.png)
 
