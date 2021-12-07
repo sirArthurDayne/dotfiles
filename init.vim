@@ -15,12 +15,6 @@ if has('win32')
 elseif has('unix')
     call plug#begin('~/.config/nvim/plugged')
 endif
-Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }    "file explorer
-Plug 'sheerun/vim-polyglot'                              "syntax hightlight
-Plug 'neoclide/coc.nvim', {'branch': 'release'}          "syntax autocomplete
-Plug 'vim-airline/vim-airline'                           "Git status bar
-Plug 'airblade/vim-gitgutter'                            "Git number-column changes
-Plug 'ryanoasis/vim-devicons'                            "icons for files(need nerdfont)
 Plug 'alvan/vim-closetag'                                "tags autocomplete
 Plug 'tpope/vim-surround'                                "allow sorrounding
 Plug 'tpope/vim-fugitive'                                "Git Integration on vim
@@ -33,10 +27,22 @@ if has("nvim")
     "telescope extensions
     Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'branch':'main', 'do': 'make' }
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
-    Plug 'fannheyward/telescope-coc.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
     "tree-sitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+     "LSP
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-cmp', { 'branch':'main' }
+    Plug 'hrsh7th/cmp-buffer', { 'branch':'main' }
+    Plug 'hrsh7th/cmp-path', { 'branch':'main' }
+    Plug 'hrsh7th/cmp-nvim-lsp', { 'branch':'main' }
+    "Plug 'hrsh7th/cmp-cmdline', { 'branch':'main' }
+    Plug 'windwp/nvim-autopairs'
+    Plug 'onsails/lspkind-nvim'
+    Plug 'tami5/lspsaga.nvim', { 'branch':'main' }
+    "Plug 'nvim-lua/completion-nvim'
+    "Statusline
+    Plug 'hoob3rt/lualine.nvim'
 endif
 "themes
 Plug 'dikiaap/minimalist'                                "main theme
@@ -44,22 +50,12 @@ Plug 'ayu-theme/ayu-vim'                                 "second theme
 " Plug 'whatyouhide/vim-gotham'
 call plug#end()
 
-"LSP setup
-let g:coc_global_extensions = [
-                            \ 'coc-html',
-                            \ 'coc-css',
-                            \ 'coc-emmet',
-                            \ 'coc-pairs',
-                            \ 'coc-prettier',
-                            \ 'coc-tsserver',
-                            \ 'coc-markdownlint',
-                            \ 'coc-vetur',
-                            \ 'coc-go',
-                            \]
-
-
 "vertically center document when insert mode
 autocmd InsertEnter * norm zz
+"keep cursor at center
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
 
 "My favorite mappings ^__^
 let mapleader = " "
@@ -98,7 +94,8 @@ nnoremap <Tab><Left> :vertical resize +5<CR>
 nnoremap <Tab><Right> :vertical resize -5<CR>
 "better find&replace in file
 nnoremap S :%s/<C-r><C-w>//g<left><left><left>
-
+"make yanking great again
+nnoremap Y y$
 "-----Extra funcionality
 function! TrimWhiteSpace()
     let l:save = winsaveview()

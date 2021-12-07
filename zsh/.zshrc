@@ -7,10 +7,9 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-neofetch
+#neofetch
 # Path to your oh-my-zsh installation.
 export ZSH="/home/krosis/.oh-my-zsh"
-export DOTFILES=$HOME/personal/dotfiles
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -76,28 +75,11 @@ ZSH_THEME="awesomepanda"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins+=(git zsh-nvm zsh-syntax-highlighting)
+plugins+=(zsh-nvm zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-#add Golang into $PATH
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-
-#My aliases
-alias winchome='cd /mnt/c/'
-alias windhome='cd /mnt/d/'
-alias windevhome='cd /mnt/d/Dev/'
-alias winduni='cd /mnt/d/vainas\ de\ la\ U/'
-alias windvisual='cd /mnt/d/Dev/Proyects/VisualProyects/'
-alias zconfig='nvim ~/personal/dotfiles/.zshrc'
-alias nvimconfig='nvim ~/personal/dotfiles/init.vim'
-alias cl='clear'
 # export MANPATH="/usr/local/man:$MANPATH"
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -116,9 +98,9 @@ alias cl='clear'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#import my aliases
+[[ ! -f ~/.aliases ]] || source ~/.aliases
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

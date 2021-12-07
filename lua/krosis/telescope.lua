@@ -1,7 +1,8 @@
 local action_state = require('telescope.actions.state') --runtime (Plugin) exists somewhere as lua/telescope/actions/state.lua
+local telescope_built = require('telescope.builtin')
 require('telescope').setup{
     defaults = {
-        prompt_prefix = "$ ",
+        prompt_prefix = "λ ",
         selection_caret = "> ",
         mappings = {
             i = {
@@ -23,19 +24,18 @@ require('telescope').setup{
 }
 require('telescope').load_extension('fzf')
 --require('telescope').load_extension('fzy_native')
-require('telescope').load_extension('coc')
 
 --remaps table
 local mappings = {}
 
 mappings.current_buffer = function()
     local options = require('telescope.themes').get_dropdown({layout_config={height=20}, previewer=false})
-    require('telescope.builtin').current_buffer_fuzzy_find(options)
+    telescope_built.current_buffer_fuzzy_find(options)
 end
 
 mappings.get_dotfiles = function()
     local options = {prompt_title = "< DOTFILES >", cwd=vim.env.DOTFILES, hidden=true}
-    require('telescope.builtin').git_files(options)
+    telescope_built.git_files(options)
 end
 
 --add delete branch feature to git_branches
@@ -47,7 +47,19 @@ mappings.git_branches = function()
             return true
         end
     }
-    require('telescope.builtin').git_branches(options)
+    telescope_built.git_branches(options)
+end
+
+--file browser
+mappings.file_browser = function()
+    local options = require('telescope.themes').get_ivy({prompt_title = "< BROWSER >", layout_config={height=20}, hidden=true})
+    telescope_built.file_browser(options)
+end
+
+--help tags
+mappings.help_tags = function()
+    local options = require('telescope.themes').get_ivy({prompt_title = "< HELP TAGS >", layout_config={height=20}})
+    telescope_built.help_tags(options)
 end
 
 return mappings
