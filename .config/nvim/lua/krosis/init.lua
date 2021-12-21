@@ -1,5 +1,7 @@
 require("krosis.telescope")
+require("krosis.lsp")
 require("krosis.lualine")
+require("krosis.lspsaga")
 
 P = function(v)
   print(vim.inspect(v))

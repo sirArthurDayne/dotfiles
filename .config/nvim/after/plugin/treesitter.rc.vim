@@ -13,13 +13,13 @@ require'nvim-treesitter.configs'.setup {
     enable = false,
     disable = {},
   },
+  incremental_selection = { enable = true },
   ensure_installed = {
-    "cpp",
-    "go",
+    "lua",
+    "vim",
     "html",
-    "javascript",
     "css",
-    "vue"
+    "javascript",
   },
 }
 EOF

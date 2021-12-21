@@ -6,24 +6,19 @@ require('telescope').setup{
         selection_caret = "> ",
         mappings = {
             i = {
-                ["<c-l>"] = function() print(vim.inspect(action_state.get_selected_entry())) end
+                --["<c-l>"] = function() print(vim.inspect(action_state.get_selected_entry())) end
             }
         },
         extensions = {
-            fzf = {
-            fuzzy = true,                    -- false will only do exact matching
-            override_generic_sorter = false, -- override the generic sorter
-            override_file_sorter = true,     -- override the file sorter
+            fzy_native = {
+                fuzzy = true, --false will only do exact matching
+                override_generic_sorter = false,
+                override_file_sorter = true,
             }
-            -- fzy_native = {
-            -- override_generic_sorter = false,
-            -- override_file_sorter = true,
-            -- }
         }
     }
 }
-require('telescope').load_extension('fzf')
---require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('fzy_native')
 
 --remaps table
 local mappings = {}
@@ -33,10 +28,10 @@ mappings.current_buffer = function()
     telescope_built.current_buffer_fuzzy_find(options)
 end
 
-mappings.get_dotfiles = function()
-    local options = {prompt_title = "< DOTFILES >", cwd=vim.env.DOTFILES, hidden=true}
-    telescope_built.git_files(options)
-end
+-- mappings.get_dotfiles = function()
+--     local options = {prompt_title = "< DOTFILES >", cwd="c:/Users/xavie/AppData/Local/nvim", hidden=true}
+--     telescope_built.git_files(options)
+-- end
 
 --add delete branch feature to git_branches
 mappings.git_branches = function()
