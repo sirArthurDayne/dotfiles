@@ -28,10 +28,12 @@ mappings.current_buffer = function()
     telescope_built.current_buffer_fuzzy_find(options)
 end
 
--- mappings.get_dotfiles = function()
---     local options = {prompt_title = "< DOTFILES >", cwd="c:/Users/xavie/AppData/Local/nvim", hidden=true}
---     telescope_built.git_files(options)
--- end
+--not working for powershell
+--mappings.get_dotfiles = function()
+    --local path = 'd:\Dev\Proyects\githubDownloads\dotfiles'
+    --local options = {prompt_title = "< DOTFILES >", cwd=path, hidden=true}
+    --telescope_built.git_files(options)
+--end
 
 --add delete branch feature to git_branches
 mappings.git_branches = function()
