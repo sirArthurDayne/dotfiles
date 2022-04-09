@@ -9,4 +9,4 @@ hi netrwDir guifg=#5eacd3
 hi qfFileName guifg=#aed75f
 hi Comment guifg=grey
 " transparebt bg
-hi Normal guibg=NONE ctermbg=NONE
+highlight Normal guibg=NONE ctermbg=NONE

@@ -1,9 +1,7 @@
 "-----Vim-fugitive setup
-"git status
-nmap <leader>gs :G<CR>
-"git checkout
-nmap <leader>gc :GCheckout<CR>
+nnoremap <C-g>s :Git<CR>
+nnoremap <C-g>l :Gclog<CR>
 "diffget to the right
-nmap <leader>gh :diffget //3<CR>
+nmap <C-g>h :diffget //3<CR>
 "diffget to the left
-nmap <leader>gf :diffget //2<CR>
+nmap <C-g>f :diffget //2<CR>

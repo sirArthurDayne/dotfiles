@@ -4,6 +4,11 @@ autocmd InsertEnter * norm zz
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
+" undo break points
+inoremap , ,<C-g>u
+inoremap . .<C-g>u
+inoremap ! !<C-g>u
+inoremap [ [<C-g>u
 
 "My favorite mappings ^__^
 let mapleader = " "
@@ -26,17 +31,22 @@ vmap > >gv
 "better entire line Up or Down
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+
 "quick save
 nnoremap <C-s> :w<CR>
+
 "quick vsplit
-nnoremap <leader>pv :wincmd v<CR>
+" nnoremap <leader>pv :wincmd v<CR>
 "quick buffer movement
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
+" nnoremap <leader>h :wincmd h<CR>
+" nnoremap <leader>l :wincmd l<CR>
+" nnoremap <leader>j :wincmd j<CR>
+" nnoremap <leader>k :wincmd k<CR>
 "rotate split
-nnoremap <leader>r :wincmd r<CR>
+" nnoremap <leader>r :wincmd r<CR>
+
 "resize current buffer
 nnoremap <Tab><Left> :vertical resize +5<CR>
 nnoremap <Tab><Right> :vertical resize -5<CR>
