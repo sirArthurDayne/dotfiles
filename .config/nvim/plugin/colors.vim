@@ -1,8 +1,11 @@
 "colorscheme setup
-"set termguicolors
-"let ayucolor="dark"
+if (has("termguicolors"))
+    set termguicolors
+endif
+let ayucolor="dark"
 let g:gruvbox_material_palette="mix"
-colorscheme gruvbox-material
+colorscheme ayu
+" colorscheme gruvbox-material
 hi ColorColumn ctermbg=0 guibg=grey
 hi LineNr guifg=#5eacd3
 hi netrwDir guifg=#5eacd3
