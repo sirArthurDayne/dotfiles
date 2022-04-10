@@ -53,12 +53,12 @@ mappings.current_buffer = function()
 end
 
 mappings.get_dotfiles = function()
-    local path = '~/AppData/Local/nvim/'
+    local path = 'd:/Dev/Proyects/githubDownloads/dotfiles'
     local options = {
         prompt_title = "< DOTFILES >",
         cwd=path,
         }
-    telescope_built.find_files(options)
+    telescope_built.git_files(options)
 end
 
 --works for powershell
