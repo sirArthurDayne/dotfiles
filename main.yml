@@ -1,0 +1,36 @@
+---
+- name: Playbook Arch Setup
+  hosts: localhost 
+  become: true
+  pre_tasks:
+    - name: Update cache before running tasks...
+      pacman:
+        update_cache: true
+      tags:
+        - zsh
+        - node
+  tasks:
+    - name: Install ZSH
+      tags:
+        - zsh
+      pacman:
+        name: zsh
+    - name: Change shell to ZSH
+      tags:
+        - zsh
+      shell: chsh -s `which zsh`
+    - name: Install nodejs and npm
+      tags:
+      - node
+      pacman: 
+        name: [ "nodejs", "npm" ] 
+    - name: Install n (for nvm)
+      tags:
+      - node
+      npm:
+        name: n
+        global: true
+    - name: Symlinks my dotfiles
+      tags:
+      - dotfiles
+      script: ./install.sh

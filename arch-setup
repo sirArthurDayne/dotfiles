@@ -1,0 +1,49 @@
+#!/bin/bash
+set -e
+
+SSH_DIR="$HOME/.ssh"
+DOTFILES="$HOME/dotfiles"
+REPOS="$HOME/Desktop/repos"
+
+if ! [ -x "$(command -v ansible)" ]; then
+	sudo pacman -S ansible --no-confirm
+fi
+
+# install paru if doesnt exit
+if ! [ -x "$(command -v paru)" ]; then
+	if ! [[ -d $REPOS ]]; then
+		mkdir -p "$REPOS"
+	fi
+	git clone https://aur.archlinux.org/paru-bin.git "$REPOS"
+	cd "$REPOS/paru-bin"
+	makepkg -si
+fi
+
+#check for dotfiles repository
+if ! [[ -d $DOTFILES ]]; then 
+	git clone https://github.com/sirArthurDayne/dotfiles "$DOTFILES"	
+else
+	git -C "$DOTFILES" pull
+fi
+
+if ! [[ -f "$SSH_DIR/authorized_keys" ]]; then
+	mkdir -p "$SSH_DIR"
+	chmod 700 "$SSH_DIR"
+
+	ssh-keygen -b 4096 -t rsa -f "$SSH_DIR/id_rsa" -N "" -C "$USER@$HOSTNAME"
+	cat "$SSH_DIR/id_rsa.pub" >> "$SSH_DIR/authorized_keys"
+	chmod 600 "$SSH_DIR/authorized_keys"
+fi
+
+if [[ -f "$DOTFILES/requirements.yml" ]]; then
+	cd "$DOTFILES"
+	ansible-galaxy install -r requirements.yml
+fi
+
+cd "$DOTFILES"
+
+if [[ -f "$DOTFILES/vault-password.txt" ]];  then
+	ansible-playbook --diff --vault-password-file "$DOTFILES/vault-password.txt" "$DOTFILES/main.yml"
+else
+	ansible-playbook --diff "$DOTFILES/main.yml"
+fi

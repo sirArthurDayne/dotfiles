@@ -1,0 +1,32 @@
+scan_timeout = 60
+# Inserts a blank line between shell prompts
+add_newline = false
+
+#make a prompt single line
+[line_break]
+disabled = true
+
+[directory]
+style = "bold blue"
+
+[cmd_duration]
+format = "[$duration]($style) "
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+
+[status]
+disabled = false
+format = "[$symbol $status]($style) "
+not_found_symbol = ""
+not_executable_symbol = ""
+sigint_symbol = "ﭦ"
+map_symbol = true
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = " "
+
+[golang]
+format = "[$symbol($version )]($style)"
+symbol = " "
