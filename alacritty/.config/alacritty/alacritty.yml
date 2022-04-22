@@ -69,7 +69,7 @@ colors:
     white: '#FFFFFF'
 
 #background
-background_opacity: 1
+window.opacity: 1
 
 #KEYMAPS
 key_bindings:

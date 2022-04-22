@@ -6,7 +6,7 @@ DOTFILES="$HOME/dotfiles"
 REPOS="$HOME/Desktop/repos"
 
 if ! [ -x "$(command -v ansible)" ]; then
-	sudo pacman -S ansible --no-confirm
+	sudo pacman -S ansible --noconfirm
 fi
 
 # install paru if doesnt exit

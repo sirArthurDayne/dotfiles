@@ -16,9 +16,9 @@
       pacman:
         name: zsh
     - name: Change shell to ZSH
+      shell: chsh -s `which zsh`
       tags:
         - zsh
-      shell: chsh -s `which zsh`
     - name: Install nodejs and npm
       tags:
       - node

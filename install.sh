@@ -1,8 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 pushd $DOTFILES
-for folder in "${STOW_FOLDERS[@]}"
+for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
 do
-	echo $folder
+	stow -D $folder
+	stow $folder
 done
 popd
