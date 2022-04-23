@@ -1,0 +1,10 @@
+- name: Install ZSH
+  become: true
+  tags:
+  - zsh
+  pacman:
+    name: zsh
+- name: Change shell to ZSH
+  shell: chsh -s $(which zsh)
+  tags:
+  - zsh

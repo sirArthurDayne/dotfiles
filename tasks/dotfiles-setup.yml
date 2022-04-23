@@ -1,0 +1,4 @@
+- name: Linking dotfiles
+  tags:
+  - dotfiles
+  ansible.builtin.script: ./install.sh

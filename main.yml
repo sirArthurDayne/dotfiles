@@ -6,33 +6,12 @@
     - name: Update cache before running tasks...
       pacman:
         update_cache: true
+        upgrade: true
       tags:
         - zsh
         - node
   tasks:
-    - name: Install ZSH
-      tags:
-        - zsh
-      pacman:
-        name: zsh
-    - name: Change shell to ZSH
-      shell: chsh -s `which zsh`
-      tags:
-        - zsh
-    - name: Install nodejs and npm
-      tags:
-      - node
-      pacman:
-        name: [ "nodejs", "npm" ]
-        update_cache: true
-        upgrade: true
-    - name: Install n (for nvm)
-      tags:
-      - node
-      npm:
-        name: n
-        global: true
-    - name: Symlinks my dotfiles
-      tags:
-      - dotfiles
-      script: ./install.sh
+    - include: tasks/zsh-setup.yml
+    - include: tasks/node-setup.yml
+    - include: tasks/nvim-setup.yml
+    - include: tasks/dotfiles-setup.yml
