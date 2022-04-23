@@ -1,4 +1,5 @@
 - name: Linking dotfiles
   tags:
   - dotfiles
+  shell: chmod 600 ./install.sh
   ansible.builtin.script: ./install.sh

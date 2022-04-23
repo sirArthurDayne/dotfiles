@@ -20,8 +20,8 @@ if ! [ -x "$(command -v paru)" ]; then
 fi
 
 #check for dotfiles repository
-if ! [[ -d $DOTFILES ]]; then 
-	git clone https://github.com/sirArthurDayne/dotfiles "$DOTFILES"	
+if ! [[ -d $DOTFILES ]]; then
+	git clone https://github.com/sirArthurDayne/dotfiles "$DOTFILES"
 else
 	git -C "$DOTFILES" pull
 fi

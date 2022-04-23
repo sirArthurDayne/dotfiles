@@ -20,6 +20,8 @@ if eval `ssh-agent -s`; then
 fi
 
 alias vi=nvim
+alias gs='git status -sb'
+alias gl='git log --oneline --decorate --graph'
 alias ls='exa --icons --long --header --git --all'
 export EDITOR="nvim"
 export PATH="$HOME/.local/share/lua-lsp:$PATH"
