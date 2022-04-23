@@ -29,7 +29,11 @@ end, {silent = true})
 -- TODO: add choice node keymap
 
 --shortcut to source this file
-vim.keymap.set("n", "<F5>", "<cmd>source ~/AppData/Local/nvim/lua/krosis/luasnip.lua<CR>")
+if vim.fn.has("win32") then
+    vim.keymap.set("n", "<F5>", "<cmd>source ~/AppData/Local/nvim/lua/krosis/luasnip.lua<CR>")
+elseif vim.fn.has("unix") then
+    vim.keymap.set("n", "<F5>", "<cmd>source ~/.config/nvim/lua/krosis/luasnip.lua<CR>")
+end
 --SNIPPETS
 -- TODO: move this to another file
 

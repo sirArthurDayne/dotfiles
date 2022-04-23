@@ -22,6 +22,7 @@ fi
 alias vi=nvim
 alias ls='exa --icons --long --header --git --all'
 export EDITOR="nvim"
+export PATH="$HOME/.local/share/lua-lsp:$PATH"
 #export MANPAGER="nvim -c 'set ft=man' -"
 
 # End of lines added by compinstall

@@ -1,6 +1,6 @@
 ---
 - name: Playbook Arch Setup
-  hosts: localhost 
+  hosts: localhost
   become: true
   pre_tasks:
     - name: Update cache before running tasks...
@@ -22,8 +22,10 @@
     - name: Install nodejs and npm
       tags:
       - node
-      pacman: 
-        name: [ "nodejs", "npm" ] 
+      pacman:
+        name: [ "nodejs", "npm" ]
+        update_cache: true
+        upgrade: true
     - name: Install n (for nvm)
       tags:
       - node

@@ -39,6 +39,8 @@ cmp.setup({
       end,
     },
     mapping = {
+        ["<C-p>"] = cmp.mapping.select_prev_item(),
+        ["<C-n>"] = cmp.mapping.select_next_item(),
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-e>"] = cmp.mapping.abort(),
@@ -74,10 +76,11 @@ cmp.setup({
         ghost_menu = true,
         ghost_text = true,
     },
-    documentation = {
-        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    window = {
+        documentation = {
+            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        },
     },
-
     sources = {
         { name = "nvim_lsp" },
         { name = "buffer", keyword_length=3 },
@@ -117,7 +120,12 @@ nvim_lsp.clangd.setup({
 })
 
 --lua lsp setup
+
 local sumneko_root_path = "d:/Dev/Proyects/githubDownloads/lua-language-server"
+if vim.fn.has('unix') then
+    sumneko_root_path = vim.env.HOME .. '/.local/share/lua-lsp'
+end
+
 local sumneko_binary = sumneko_root_path .. "/bin/lua-language-server"
 
 nvim_lsp.sumneko_lua.setup(config({

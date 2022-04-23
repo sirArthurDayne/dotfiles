@@ -54,6 +54,9 @@ end
 
 mappings.get_dotfiles = function()
     local path = 'd:/Dev/Proyects/githubDownloads/dotfiles'
+    if vim.fn.has("unix") then
+        path = '~/dotfiles'
+    end
     local options = {
         prompt_title = "< DOTFILES >",
         cwd=path,
@@ -63,7 +66,11 @@ end
 
 --works for powershell
 local function set_background(content)
-    vim.fn.executable("pwsh -c {Set-WallPaper -Image '" .. content .. "' }")
+    if vim.fn.has("unix") then
+        vim.fn.system("feh --bg-fill --no-fehbg " .. content)
+    else
+        vim.fn.system("pwsh -c {Set-WallPaper -Image '" .. content .. "' }")
+    end
 end
 
 local function select_background(prompt_buffer, map)
@@ -99,7 +106,11 @@ local function bg_selector(prompt, cwd)
     end
 end
 
-mappings.bg_selector = bg_selector("< BACKGROUND >", "D:/wallpapersPack")
+local wallpaperPath = "D:/wallpapersPack"
+if vim.fn.has("unix") then
+    wallpaperPath = "~/wallpapers"
+end
+mappings.bg_selector = bg_selector("< BACKGROUND >", wallpaperPath)
 
 mappings.git_commits = function()
     local options = {

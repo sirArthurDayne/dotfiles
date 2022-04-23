@@ -13,5 +13,10 @@ nnoremap <leader>h <cmd>lua require('krosis.telescope').help_tags()<CR>
 nnoremap <leader>cb <cmd>lua require('krosis.telescope').bg_selector()<CR>
 
 "easy sourcing directories
-nnoremap <F4> :lua package.loaded.krosis = nil <CR>:source ~/Appdata/Local/nvim/init.vim <CR>
+if has('win32')
+    nnoremap <F4> :lua package.loaded.krosis = nil <CR>:source ~/Appdata/Local/nvim/init.vim <CR>
+elseif has('unix')
+    nnoremap <F4> :lua package.loaded.krosis = nil <CR>:source ~/.config/nvim/init.vim <CR>
+endif
+
 nnoremap <F6> <cmd>lua require('krosis.telescope').get_dotfiles()<CR>
