@@ -1,7 +1,8 @@
 - name: Install neovim builds packages
   become: true
   tags:
-    - build
+    - install
+    - neovim
   pacman:
     name: [ "base-devel", "cmake", "unzip" "ninja", "tree-sitter", "curl" ]
 - name: Remove neovim

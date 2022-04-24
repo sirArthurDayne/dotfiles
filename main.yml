@@ -1,6 +1,9 @@
 ---
 - name: Playbook Arch Setup
   hosts: localhost
+  vars:
+    source_key: "./.ssh/id_rsa"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
   become: true
   pre_tasks:
     - name: Update cache before running tasks...
@@ -8,9 +11,10 @@
         update_cache: true
         upgrade: true
       tags:
-        - zsh
-        - node
+        - install
+        - core
   tasks:
+    - include: tasks/ssh.yml
     - include: tasks/zsh-setup.yml
     - include: tasks/node-setup.yml
     - include: tasks/nvim-setup.yml

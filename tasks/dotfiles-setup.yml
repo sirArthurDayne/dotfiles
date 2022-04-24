@@ -1,5 +1,12 @@
+- name: Installing GNU-stow
+  pacman: name=stow
+  tags:
+    - install
+    - dotfiles
+    - stow
 - name: Linking dotfiles
   tags:
-  - dotfiles
-  shell: chmod 600 ./install.sh
-  ansible.builtin.script: ./install.sh
+    - install
+    - dotfiles
+    - stow
+  shell: chmod 600 ./install.sh && ./install.sh
