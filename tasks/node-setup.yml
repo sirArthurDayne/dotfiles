@@ -1,12 +1,12 @@
 - name: Install nodejs and npm
   become: true
   tags:
-  - node
+    - node
   pacman:
     name: [ "nodejs", "npm" ]
 - name: Install n (for nvm)
   tags:
-  - node
+    - node
   npm:
     name: n
     global: true

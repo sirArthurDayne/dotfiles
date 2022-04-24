@@ -1,16 +1,19 @@
 - name: Install ZSH
   become: true
   tags:
-  - zsh
+    - zsh
+    - install
   pacman:
     name: zsh
 - name: Change shell to ZSH
   shell: chsh -s $(which zsh)
   tags:
-  - zsh
+    - zsh
+    - install
 - name: Install zsh-autosuggestions
   ansible.builtin.git:
   repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
   dest: "~/Desktop/repos/zsh-autosuggestions"
   tags:
     - zsh
+    - install
