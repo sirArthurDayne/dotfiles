@@ -14,7 +14,7 @@ if ! [ -x "$(command -v paru)" ]; then
 	if ! [[ -d $REPOS ]]; then
 		mkdir -p "$REPOS"
 	fi
-	git clone https://aur.archlinux.org/paru-bin.git "$REPOS"
+	git clone https://aur.archlinux.org/paru-bin.git "$REPOS/paru-bin"
 	cd "$REPOS/paru-bin"
 	makepkg -si
 fi
