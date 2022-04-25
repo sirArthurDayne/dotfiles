@@ -5,18 +5,9 @@ SSH_DIR="$HOME/.ssh"
 DOTFILES="$HOME/dotfiles"
 REPOS="$HOME/Desktop/repos"
 
+#check for ansible
 if ! [ -x "$(command -v ansible)" ]; then
 	sudo pacman -S ansible --noconfirm
-fi
-
-# install paru if doesnt exit
-if ! [ -x "$(command -v paru)" ]; then
-	if ! [[ -d $REPOS ]]; then
-		mkdir -p "$REPOS"
-	fi
-	git clone https://aur.archlinux.org/paru-bin.git "$REPOS/paru-bin"
-	cd "$REPOS/paru-bin"
-	makepkg -si
 fi
 
 #check for dotfiles repository
@@ -29,15 +20,6 @@ fi
 if ! [[ -d $SSH_DIR ]]; then
 	mkdir -p $SSH_DIR
 fi
-
-# if ! [[ -f "$SSH_DIR/authorized_keys" ]]; then
-# 	mkdir -p "$SSH_DIR"
-# 	chmod 700 "$SSH_DIR"
-#
-# 	ssh-keygen -b 4096 -t rsa -f "$SSH_DIR/id_rsa" -N "" -C "$USER@$HOSTNAME"
-# 	cat "$SSH_DIR/id_rsa.pub" >> "$SSH_DIR/authorized_keys"
-# 	chmod 600 "$SSH_DIR/authorized_keys"
-# fi
 
 if [[ -f "$DOTFILES/requirements.yml" ]]; then
 	cd "$DOTFILES"
