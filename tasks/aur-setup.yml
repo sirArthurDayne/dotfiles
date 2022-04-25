@@ -1,13 +1,12 @@
-- name: git clone paru (AUR-helper)
+- name: download paru (AUR-helper)
   tag:
     - install
     - core
   ansible.builtin.git:
-  repo: 'https://aur.archlinux.org/paru-bin.git'
-  dest: "{{ lookup('env', 'HOME') }}/repos/paru-bin"
+    repo: 'https://aur.archlinux.org/paru-bin.git'
+    dest: "{{ lookup('env', 'HOME') }}/repos/paru-bin"
 - name: install paru
   tag:
     - install
     - core
   shell: "cd {{ lookup('env', 'HOME') }}/repos/paru-bin && makepkg -si"
-
