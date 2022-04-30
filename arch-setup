@@ -5,18 +5,12 @@ SSH_DIR="$HOME/.ssh"
 DOTFILES="$HOME/dotfiles"
 REPOS="$HOME/Desktop/repos"
 
-#check for ansible
+# check for ansible
 if ! [ -x "$(command -v ansible)" ]; then
 	sudo pacman -S ansible --noconfirm
 fi
 
-#check for dotfiles repository
-if ! [[ -d $DOTFILES ]]; then
-	git clone https://github.com/sirArthurDayne/dotfiles "$DOTFILES"
-else
-	git -C "$DOTFILES" pull
-fi
-
+# check for ssh_dir
 if ! [[ -d $SSH_DIR ]]; then
 	mkdir -p "$SSH_DIR"
 fi
