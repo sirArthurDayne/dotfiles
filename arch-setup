@@ -18,7 +18,7 @@ else
 fi
 
 if ! [[ -d $SSH_DIR ]]; then
-	mkdir -p $SSH_DIR
+	mkdir -p "$SSH_DIR"
 fi
 
 if [[ -f "$DOTFILES/requirements.yml" ]]; then
@@ -31,5 +31,5 @@ cd "$DOTFILES"
 if [[ -f "$DOTFILES/vault-password.txt" ]];  then
 	ansible-playbook --diff --vault-password-file "$DOTFILES/vault-password.txt" "$DOTFILES/main.yml"
 else
-	ansible-playbook --diff "$DOTFILES/main.yml"
+	ansible-playbook --diff --ask-vault-pass "$DOTFILES/main.yml"
 fi
