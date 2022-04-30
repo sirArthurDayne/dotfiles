@@ -1,29 +1,16 @@
 #!/usr/bin/env bash
 set -e
-
-SSH_DIR="$HOME/.ssh"
-DOTFILES="$HOME/dotfiles"
-REPOS="$HOME/Desktop/repos"
-
 # check for ansible
 if ! [ -x "$(command -v ansible)" ]; then
 	sudo pacman -S ansible --noconfirm
 fi
 
-# check for ssh_dir
-if ! [[ -d $SSH_DIR ]]; then
-	mkdir -p "$SSH_DIR"
-fi
-
-if [[ -f "$DOTFILES/requirements.yml" ]]; then
-	cd "$DOTFILES"
+if [[ -f "requirements.yml" ]]; then
 	ansible-galaxy install -r requirements.yml
 fi
 
-cd "$DOTFILES"
-
-if [[ -f "$DOTFILES/vault-password.txt" ]];  then
-	ansible-playbook --diff --vault-password-file "$DOTFILES/vault-password.txt" "$DOTFILES/main.yml"
+if [[ -f "vault-password.txt" ]];  then
+	ansible-playbook --diff --vault-password-file "./vault-password.txt" "./main.yml"
 else
-	ansible-playbook --diff --ask-vault-pass "$DOTFILES/main.yml"
+	ansible-playbook --diff --ask-vault-pass "./main.yml"
 fi
