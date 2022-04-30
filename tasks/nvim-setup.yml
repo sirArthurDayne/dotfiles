@@ -4,7 +4,7 @@
     - install
     - neovim
   pacman:
-    name: [ "base-devel", "cmake", "unzip" "ninja", "tree-sitter", "curl" ]
+    name: [ "base-devel", "cmake", "unzip", "ninja", "tree-sitter", "curl" ]
 - name: Remove neovim
   shell: rm -rf ~/neovim
   tags:
