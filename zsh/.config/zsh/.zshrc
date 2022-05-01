@@ -42,5 +42,6 @@ export STARSHIP_CONFIG=$XDG_CONFIG_HOME/.starship/starship.toml
 export STARSHIP_CACHE=$XDG_CACHE_HOME/.starship/cache
 
 source ~/Desktop/repos/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/Desktop/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # End of lines added by compinstall
 eval "$(starship init zsh)"
