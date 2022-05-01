@@ -19,14 +19,20 @@ if eval `ssh-agent -s`; then
     trap 'kill $SSH_AGENT_PID' EXIT
 fi
 
+#aliases
 alias vi=nvim
 alias zconf='vi $HOME/.config/zsh/.zshrc'
 alias gs='git status -sb'
 alias gl='git log --oneline --decorate --graph'
 alias ls='exa --icons --long --header --git --all'
+
+export TERM="alacritty"
 export EDITOR="nvim"
+export BROWSER="firefox"
 export PATH="$HOME/.local/share/lua-lsp:$PATH"
-#export MANPAGER="nvim -c 'set ft=man' -"
+export STARSHIP_CONFIG=$XDG_CONFIG_HOME/.starship/starship.toml
+export STARSHIP_CACHE=$XDG_CACHE_HOME/.starship/cache
+
 source ~/Desktop/repos/zsh-autosuggestions/zsh-autosuggestions.zsh
 # End of lines added by compinstall
 eval "$(starship init zsh)"
