@@ -24,7 +24,15 @@ alias vi=nvim
 alias zconf='vi $HOME/.config/zsh/.zshrc'
 alias gs='git status -sb'
 alias gl='git log --oneline --decorate --graph'
-alias ls='exa --icons --long --header --git --all'
+
+#ls aliases
+alias ls='exa -al --color=always --group-directories-first --icons'
+alias la='exa -a --color=always --group-directories-first --icons'
+alias ll='exa -l --color=always --group-directories-first --icons'
+alias lt='exa -aT --color=always --group-directories-first'
+
+#edit aliases
+alias zsource="source $XDG_CONFIG_HOME/zsh/.zshrc"
 
 export TERM="alacritty"
 export EDITOR="nvim"
