@@ -13,7 +13,7 @@ autoload -Uz compinit
 compinit
 
 # ssh setup
-if eval `ssh-agent -s`; then
+if eval `ssh-agent -s` &> /dev/null; then
     ssh-add "$HOME/.ssh/id_rsa"
 
     trap 'kill $SSH_AGENT_PID' EXIT
@@ -37,7 +37,7 @@ alias zsource="source $XDG_CONFIG_HOME/zsh/.zshrc"
 export TERM="alacritty"
 export EDITOR="nvim"
 export BROWSER="firefox"
-export PATH="$HOME/.local/share/lua-lsp:$PATH"
+export PATH="$HOME/.local/share/lua-lsp:$HOME/.local/bin:$PATH"
 export STARSHIP_CONFIG=$XDG_CONFIG_HOME/.starship/starship.toml
 export STARSHIP_CACHE=$XDG_CACHE_HOME/.starship/cache
 
