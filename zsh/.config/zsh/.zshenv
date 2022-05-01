@@ -5,5 +5,5 @@ export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
 
 #my exports
 export ZDOTDIR="$HOME/.config/zsh"
-export STOW_FOLDERS="nvim,alacritty,tmux,zsh,ripgrep,neofetch,picom"
+export STOW_FOLDERS="nvim,alacritty,tmux,zsh,ripgrep,neofetch,picom,.starship"
 export DOTFILES="$HOME/dotfiles"
