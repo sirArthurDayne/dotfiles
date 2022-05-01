@@ -1,4 +1,9 @@
 ---
+- name: make directories for paru
+  file:
+    path: "{{ lookup('env', 'HOME') }}/repos"
+    state: directory
+    mode: 0777
 - name: download paru (AUR-helper)
   tags:
     - install
