@@ -13,7 +13,7 @@
 if has('win32')
     call plug#begin('~/Appdata/Local/nvim/plugged')
 elseif has('unix')
-    call plug#begin('~/.config/nvim/plugged')
+    call plug#begin('~/.vim/plugged')
 endif
     Plug 'tpope/vim-fugitive'                                "Git Integration on vim
 if has("nvim")
