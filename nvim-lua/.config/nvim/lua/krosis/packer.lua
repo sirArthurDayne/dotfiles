@@ -17,6 +17,11 @@ return require('packer').startup { function(use)
      use { "nvim-telescope/telescope-file-browser.nvim" }
      use { "kyazdani42/nvim-web-devicons" }
      use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+    -- git integration
+    use { "tpope/vim-fugitive",
+        config = function ()
+            require("krosis.fugitive-config")
+        end,}
     -- TreeSitter
     use {
       'nvim-treesitter/nvim-treesitter',
@@ -72,6 +77,13 @@ return require('packer').startup { function(use)
             require("krosis.zen-mode-config")
         end,
     }
+    --debugger
+    -- use { "rcarriga/nvim-dap-ui",
+    -- config = function()
+    --     require("krosis.dap-config")
+    -- end,
+    -- requires = {"mfussenegger/nvim-dap"}
+    -- }
 
 	if packer_bootstrap then
 		require('packer').sync()
