@@ -149,6 +149,9 @@ require("lspconfig").sumneko_lua.setup(config({
 	},
 }))
 
+-- JS/TS LSP
+require("lspconfig").tsserver.setup({})
+
 -- If you want insert `(` after select function or method item
 -- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 -- cmp.event:on(
