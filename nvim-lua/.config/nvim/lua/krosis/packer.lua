@@ -9,6 +9,7 @@ return require('packer').startup { function(use)
 	use('wbthomason/packer.nvim')
     -- colorscheme
     use { 'rose-pine/neovim', config = function() require("krosis.colors") end, }
+    -- use { 'luisiacc/gruvbox-baby', config = function() require("krosis.colors") end, }
     -- telescope
      use {
       'nvim-telescope/telescope.nvim',
@@ -78,12 +79,9 @@ return require('packer').startup { function(use)
         end,
     }
     --debugger
-    -- use { "rcarriga/nvim-dap-ui",
-    -- config = function()
-    --     require("krosis.dap-config")
-    -- end,
-    -- requires = {"mfussenegger/nvim-dap"}
-    -- }
+    use { "rcarriga/nvim-dap-ui",
+    requires = {"mfussenegger/nvim-dap"}
+    }
 
 	if packer_bootstrap then
 		require('packer').sync()

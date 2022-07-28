@@ -42,6 +42,8 @@ augroup Jeremy
 augroup END
 ]])
 
+require("krosis.dap-config")
+
 P = function(v)
   print(vim.inspect(v))
   return v

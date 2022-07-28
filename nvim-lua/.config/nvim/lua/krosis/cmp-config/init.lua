@@ -150,7 +150,11 @@ require("lspconfig").sumneko_lua.setup(config({
 }))
 
 -- JS/TS LSP
-require("lspconfig").tsserver.setup({})
+require("lspconfig").tsserver.setup(config())
+-- terraform
+require("lspconfig").terraformls.setup(config())
+-- Python
+require("lspconfig").pyright.setup(config())
 
 -- If you want insert `(` after select function or method item
 -- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
