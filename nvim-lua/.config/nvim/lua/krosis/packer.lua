@@ -9,6 +9,7 @@ return require('packer').startup { function(use)
 	use('wbthomason/packer.nvim')
     -- colorscheme
     use { 'rose-pine/neovim', config = function() require("krosis.colors") end, }
+    use { 'ellisonleao/gruvbox.nvim', config = function() require("krosis.colors") end, }
     -- use { 'luisiacc/gruvbox-baby', config = function() require("krosis.colors") end, }
     -- use { 'Shatur/neovim-ayu', config = function() require("krosis.colors") end, }
     -- telescope
