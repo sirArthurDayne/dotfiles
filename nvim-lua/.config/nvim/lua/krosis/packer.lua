@@ -40,7 +40,8 @@ return require('packer').startup { function(use)
     }
     --LSP
     use {
-        "williamboman/nvim-lsp-installer",
+        "williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
     }
     use {

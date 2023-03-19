@@ -4,6 +4,7 @@ require("krosis.keymaps")
 require("krosis.telescope-config")
 require("krosis.toggleterm")
 require("krosis.nvim-autopairs")
+require("krosis.mason-config")
 
 local augroup = vim.api.nvim_create_augroup
 KrosisGroup = augroup('Krosis', {})
