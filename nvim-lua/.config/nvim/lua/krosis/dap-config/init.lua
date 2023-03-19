@@ -22,7 +22,7 @@ local dapui = require("dapui")
 --         }
 --     },
 -- })
-require("dapui").setup({
+dapui.setup({
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {
     -- Use a table to apply multiple mappings

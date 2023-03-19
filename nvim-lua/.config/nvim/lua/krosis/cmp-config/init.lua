@@ -68,7 +68,7 @@ local nnoremap = Remap.nnoremap
 local inoremap = Remap.inoremap
 local function config(_config)
 	return vim.tbl_deep_extend("force", {
-		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+		capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
 		on_attach = function()
             nnoremap("gd", function() vim.lsp.buf.definition() end)
             nnoremap("gD", function() vim.lsp.buf.declaration() end)
@@ -124,7 +124,7 @@ end
 
 local sumneko_binary = sumneko_root_path .. "/bin/lua-language-server"
 
-require("lspconfig").sumneko_lua.setup(config({
+require("lspconfig").lua_ls.setup(config({
 	cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
 	settings = {
 		Lua = {
@@ -155,6 +155,8 @@ require("lspconfig").tsserver.setup(config())
 require("lspconfig").terraformls.setup(config())
 -- Python
 require("lspconfig").pyright.setup(config())
+--GOlang
+require("lspconfig").gopls.setup(config())
 
 -- If you want insert `(` after select function or method item
 -- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
