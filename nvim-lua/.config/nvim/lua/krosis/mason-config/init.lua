@@ -55,39 +55,17 @@ local function config(_config)
 		end,
 	}, _config or {})
 end
--- LUA LSP | TODO: Remove This with mason.nvim
-local sumneko_root_path = "d:/Dev/Proyects/githubDownloads/lua-language-server"
-if vim.fn.has('unix') then
-    sumneko_root_path = vim.env.HOME .. '/.local/share/lua-lsp'
-end
 
-local sumneko_binary = sumneko_root_path .. "/bin/lua-language-server"
-
+-- LUA/Neovim
 require("lspconfig").lua_ls.setup(config({
-	cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
-	settings = {
-		Lua = {
-			runtime = {
-				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-				version = "LuaJIT",
-				-- Setup your lua path
-				path = vim.split(package.path, ";"),
-			},
-			diagnostics = {
-				-- Get the language server to recognize the `vim` global
-				globals = { "vim" },
-			},
-			workspace = {
-				-- Make the server aware of Neovim runtime files
-				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-				},
-			},
-		},
-	},
+     settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
 }))
-
 -- JS/TS LSP
 require("lspconfig").tsserver.setup(config())
 -- terraform
