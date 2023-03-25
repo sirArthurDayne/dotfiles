@@ -27,8 +27,9 @@ M.inoremap = bind("i")
 
 vim.keymap.set("i", "jk", "<ESC>", opts)
 vim.keymap.set("n", "<C-s>", ":w<CR>", opts)
-vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
-vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
+vim.keymap.set("n", "Y", "yg$", opts)
+--copy and paste without changing register
+vim.keymap.set("x", "<leader>p", "\"_dP", opts)
 --better find&replace in file
 vim.keymap.set("n", "S", ":%s/<C-r><C-w>//g<left><left><left>", opts)
 --better entire line Up or Down
@@ -40,6 +41,8 @@ vim.keymap.set("n", "<leader>k",":m .-2<CR>==", opts)
 vim.keymap.set("n", "n", "nzzzv", opts)
 vim.keymap.set("n", "N", "Nzzzv", opts)
 vim.keymap.set("n", "J", "mzJ`z", opts)
+vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
+vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 -- undo break points
 vim.keymap.set("i", ",", ",<C-g>u", opts)
 vim.keymap.set("i", ".", ".<C-g>u", opts)
