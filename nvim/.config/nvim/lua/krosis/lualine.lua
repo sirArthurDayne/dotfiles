@@ -3,7 +3,7 @@ if (not status) then return end
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'ayu_mirage',
+    theme = 'gruvbox',
     component_separators = {'', ''},
     section_separators = {'', ''},
     disabled_filetypes = {}
@@ -11,7 +11,7 @@ require'lualine'.setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch'},
-    lualine_c = {'filename'},
+    lualine_c = {'filename', 'lsp_progress'},
     lualine_x = {
         { 'diagnostics', sources = {"nvim_diagnostic"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '} },
     'encoding',
