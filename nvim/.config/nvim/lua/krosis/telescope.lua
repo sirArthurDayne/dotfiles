@@ -30,6 +30,7 @@ telescope.setup{
 }
 telescope.load_extension('fzy_native')
 telescope.load_extension("file_browser")
+telescope.load_extension("harpoon")
 
 --remaps table
 local mappings = {}

@@ -86,6 +86,7 @@ return require('packer').startup { function(use)
     requires = {"mfussenegger/nvim-dap"}
     }
     use { "rcarriga/nvim-notify" }
+    use { "ThePrimeagen/harpoon" }
 
 	if packer_bootstrap then
 		require('packer').sync()
