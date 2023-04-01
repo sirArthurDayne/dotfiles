@@ -1,5 +1,5 @@
 require("krosis.config")
-require("krosis.packer")
+require("krosis.lazy")
 require("krosis.telescope-config")
 require("krosis.toggleterm-config")
 require("krosis.autopairs-config")
