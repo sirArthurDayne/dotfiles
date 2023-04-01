@@ -8,9 +8,8 @@ end
 return require('packer').startup { function(use)
 	use('wbthomason/packer.nvim')
     -- colorscheme
-    use { 'rose-pine/neovim', config = function() require("krosis.colors") end, }
-    use { 'ellisonleao/gruvbox.nvim', config = function() require("krosis.colors") end, }
-    -- use { 'Shatur/neovim-ayu', config = function() require("krosis.colors") end, }
+    use { 'rose-pine/neovim', config = function() require("krosis.colorschemes-config") end, }
+    use { 'ellisonleao/gruvbox.nvim', config = function() require("krosis.colorschemes-config") end, }
     -- telescope
      use {
       'nvim-telescope/telescope.nvim',
@@ -61,13 +60,13 @@ return require('packer').startup { function(use)
     --snipets
     use { "L3MON4D3/LuaSnip",
     config = function ()
-        require('krosis.luasnip')
+        require('krosis.luasnip-config')
     end }
     --status bar
     use {
       "nvim-lualine/lualine.nvim",
       config = function()
-        require("krosis.statusline")
+        require("krosis.lualine-config")
       end,
       requires = { "kyazdani42/nvim-web-devicons", opt = true },
     }

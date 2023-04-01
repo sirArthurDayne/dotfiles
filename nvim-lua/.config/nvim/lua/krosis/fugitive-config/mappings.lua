@@ -1,4 +1,4 @@
-local Remaps = require("krosis.keymaps")
+local Remaps = require("krosis.config.keymaps")
 --git status
 vim.keymap.set("n", "<C-g>s", vim.cmd.Git, Remaps.opts)
 --git log

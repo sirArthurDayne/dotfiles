@@ -31,7 +31,7 @@ require('mason').setup {
 require('mason-lspconfig').setup()
 
 -- Setup Remaps for every LSP
-local Remap = require("krosis.keymaps")
+local Remap = require("krosis.config.keymaps")
 local nnoremap = Remap.nnoremap
 local inoremap = Remap.inoremap
 local function config(_config)

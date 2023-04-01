@@ -1,4 +1,4 @@
-local remap = require("krosis.keymaps")
+local remap = require("krosis.config.keymaps")
 local nnoremap = remap.nnoremap
 local dapui = require("dapui")
 local dap = require("dap")

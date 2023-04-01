@@ -1,50 +1,11 @@
-require("krosis.sets")
+require("krosis.config")
 require("krosis.packer")
-require("krosis.keymaps")
 require("krosis.telescope-config")
-require("krosis.toggleterm")
-require("krosis.nvim-autopairs")
+require("krosis.toggleterm-config")
+require("krosis.autopairs-config")
 require("krosis.mason-config")
 require("krosis.notify-config")
 require("krosis.harpoon-config")
-
-local augroup = vim.api.nvim_create_augroup
-KrosisGroup = augroup('Krosis', {})
-
-local autocmd = vim.api.nvim_create_autocmd
-local yank_group = augroup('HighlightYank', {})
-
-autocmd('TextYankPost', {
-    group = yank_group,
-    pattern = '*',
-    callback = function()
-        vim.highlight.on_yank({
-            higroup = 'IncSearch',
-            timeout = 40,
-        })
-    end,
-})
-
---vertically center document when insert mode
-vim.cmd([[
-    augroup Krosis
-        autocmd!
-        autocmd InsertEnter * norm zz
-    augroup END
-]])
-
-vim.cmd([[
-function! TrimWhiteSpace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-endfunction
-augroup Jeremy
-    autocmd!
-    autocmd BufWritePre * :call TrimWhiteSpace()
-augroup END
-]])
-
 require("krosis.dap-config")
 
 P = function(v)

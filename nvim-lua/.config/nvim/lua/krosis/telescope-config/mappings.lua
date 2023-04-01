@@ -1,4 +1,4 @@
-local Remap = require("krosis.keymaps")
+local Remap = require("krosis.config.keymaps")
 local keymap = Remap.keymap
 keymap("n", "<C-p>", ":lua require('telescope.builtin').git_files()<CR>", Remap.opts)
 keymap("n", "<F6>", ":lua require('krosis.telescope-config').get_dotfiles()<CR>", Remap.opts)

@@ -44,6 +44,7 @@ local options = {
     showmode = false,
     showtabline = 1, --always show tabs
     laststatus = 3,
+    sessionoptions = { "buffers", "curdir", "tabpages", "winsize" },
 }
 
 for k, v in pairs(options) do
