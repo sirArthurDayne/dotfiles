@@ -70,4 +70,7 @@ return require('lazy').setup({
     },
     { "rcarriga/nvim-notify" },
     { "ThePrimeagen/harpoon" },
+    --go
+    "olexsmir/gopher.nvim",
+    "leoluz/nvim-dap-go",
 })

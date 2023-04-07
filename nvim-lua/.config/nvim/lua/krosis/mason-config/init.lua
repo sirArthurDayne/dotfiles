@@ -73,6 +73,10 @@ require("lspconfig").terraformls.setup(config())
 -- Python
 require("lspconfig").pyright.setup(config())
 --GOlang
-require("lspconfig").gopls.setup(config())
+require("lspconfig").gopls.setup(config({
+    settings = {
+        gofumpt = true,
+    }
+}))
 
 vim.diagnostic.config({virtual_text = true})
