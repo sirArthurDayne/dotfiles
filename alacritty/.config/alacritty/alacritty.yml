@@ -9,15 +9,16 @@ window:
   dinamic_padding: false
 
 #Font setup
+#CaskaydiaCove Nerd Font
 font:
   normal:
-    family: CaskaydiaCove NF
+    family: CaskaydiaMono Nerd Font Mono
     style: Regular
   bold:
-    family: CaskaydiaCove Nerd Font
+    family: CaskaydiaMono NFP 
     style: Bold
   italic:
-    family: JetbrainsMono Nerd Font
+    family: CaskaydiaMono NF Light
     style: Italic
   #font size
   size: 11.0
@@ -69,7 +70,7 @@ colors:
     white: '#FFFFFF'
 
 #background
-window.opacity: 1
+#window.opacity: 1
 
 #KEYMAPS
 key_bindings:
