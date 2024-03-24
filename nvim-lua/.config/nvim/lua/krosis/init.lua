@@ -9,17 +9,18 @@ require("krosis.notify-config")
 require("krosis.harpoon-config")
 require("krosis.dap-config")
 require("krosis.gopher-config")
+require("krosis.noise-config")
 
 P = function(v)
-  print(vim.inspect(v))
-  return v
+	print(vim.inspect(v))
+	return v
 end
 
-if pcall(require, 'plenary') then
-  RELOAD = require('plenary.reload').reload_module
+if pcall(require, "plenary") then
+	RELOAD = require("plenary.reload").reload_module
 
-  R = function(name)
-    RELOAD(name)
-    return require(name)
-  end
+	R = function(name)
+		RELOAD(name)
+		return require(name)
+	end
 end

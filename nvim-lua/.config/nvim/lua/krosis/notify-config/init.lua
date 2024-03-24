@@ -13,7 +13,7 @@ vim.notify.setup( {
     minimum_width = 50,
     render = "default",
     stages = "fade_in_slide_out",
-    timeout = 5000,
+    timeout = 8000,
     top_down = true
   }
 )

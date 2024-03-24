@@ -35,30 +35,34 @@ local Remap = require("krosis.config.keymaps")
 local nnoremap = Remap.nnoremap
 local inoremap = Remap.inoremap
 local function config(_config)
-	return vim.tbl_deep_extend("force", {
-		capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
-		on_attach = function()
+    return vim.tbl_deep_extend("force", {
+        capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+        on_attach = function()
             nnoremap("gd", function() vim.lsp.buf.definition() end)
             nnoremap("gD", function() vim.lsp.buf.declaration() end)
-			nnoremap("K", function() vim.lsp.buf.hover() end)
-			nnoremap("<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
-			nnoremap("<leader>aws", function() vim.lsp.buf.add_workspace_folder() end)
-			nnoremap("<leader>lws", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end)
-			nnoremap("<C-l>d", function() vim.diagnostic.open_float() end)
-			nnoremap("[d", function() vim.diagnostic.goto_next() end)
-			nnoremap("]d", function() vim.diagnostic.goto_prev() end)
-			nnoremap("<C-l>vl", function() vim.diagnostic.show_line_diagnostics() end)
-			nnoremap("<C-l>ca", function() vim.lsp.buf.code_action() end)
-			nnoremap("<C-l>vr", function() vim.lsp.buf.references() end)
-			nnoremap("<C-l>r", function() vim.lsp.buf.rename() end)
-			inoremap("<C-h>", function() vim.lsp.buf.signature_help() end)
-		end,
-	}, _config or {})
+            nnoremap("K", function() vim.lsp.buf.hover() end)
+            nnoremap("<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
+            nnoremap("<leader>aws", function() vim.lsp.buf.add_workspace_folder() end)
+            nnoremap("<leader>lws", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end)
+            nnoremap("<C-l>d", function() vim.diagnostic.open_float() end)
+            nnoremap("[d", function() vim.diagnostic.goto_next() end)
+            nnoremap("]d", function() vim.diagnostic.goto_prev() end)
+            nnoremap("<C-l>vl", function() vim.diagnostic.show_line_diagnostics() end)
+            nnoremap("<C-l>a", function() vim.lsp.buf.code_action() end)
+            nnoremap("<C-l>v", function() vim.lsp.buf.references() end)
+            if pcall(require, "inc_rename") then
+                vim.keymap.set("n", "<C-l>r", ":IncRename ")
+            else
+                nnoremap("<C-l>r", function() vim.lsp.buf.rename() end)
+            end
+            inoremap("<C-h>", function() vim.lsp.buf.signature_help() end)
+        end,
+    }, _config or {})
 end
 
 -- LUA/Neovim
 require("lspconfig").lua_ls.setup(config({
-     settings = {
+    settings = {
         Lua = {
             diagnostics = {
                 globals = { 'vim' }
@@ -76,7 +80,16 @@ require("lspconfig").pyright.setup(config())
 require("lspconfig").gopls.setup(config({
     settings = {
         gofumpt = true,
-    }
+        gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            analyses = {
+                unusedParams = true,
+            },
+        }
+    },
+    filetypes = { "go", "gomod", "gowork", "gotmpl" },
+    root_dir = require("lspconfig/util").root_pattern("go.work", "go.mod", ".git"),
 }))
 
-vim.diagnostic.config({virtual_text = true})
+vim.diagnostic.config({ virtual_text = true })
