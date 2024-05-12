@@ -101,4 +101,5 @@ return require('lazy').setup({
         end,
     },
     { "j-hui/fidget.nvim", opts = {}, },
+    { "folke/neodev.nvim", opts = {}, },
 })

@@ -1,3 +1,4 @@
+require("neodev").setup({})
 require('mason').setup {
     ui = {
         icons = {
@@ -41,15 +42,14 @@ local function config(_config)
             nnoremap("gd", function() vim.lsp.buf.definition() end)
             nnoremap("gD", function() vim.lsp.buf.declaration() end)
             nnoremap("K", function() vim.lsp.buf.hover() end)
-            nnoremap("<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
-            nnoremap("<leader>aws", function() vim.lsp.buf.add_workspace_folder() end)
-            nnoremap("<leader>lws", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end)
             nnoremap("<C-l>d", function() vim.diagnostic.open_float() end)
             nnoremap("[d", function() vim.diagnostic.goto_next() end)
             nnoremap("]d", function() vim.diagnostic.goto_prev() end)
             nnoremap("<C-l>vl", function() vim.diagnostic.show_line_diagnostics() end)
             nnoremap("<C-l>a", function() vim.lsp.buf.code_action() end)
-            nnoremap("<C-l>v", function() vim.lsp.buf.references() end)
+            nnoremap("<C-l>v", function() require('telescope.builtin').lsp_references() end)
+            nnoremap("<leader>S", function() require('telescope.builtin').lsp_dynamic_workspace_symbols() end)
+            nnoremap("<leader>s", function() require('telescope.builtin').lsp_document_symbols() end)
             if pcall(require, "inc_rename") then
                 vim.keymap.set("n", "<C-l>r", ":IncRename ")
             else
@@ -64,8 +64,8 @@ end
 require("lspconfig").lua_ls.setup(config({
     settings = {
         Lua = {
-            diagnostics = {
-                globals = { 'vim' }
+            completion = {
+                callSnippet = "Replace"
             }
         }
     }
