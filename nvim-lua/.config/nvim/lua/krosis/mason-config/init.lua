@@ -92,4 +92,7 @@ require("lspconfig").gopls.setup(config({
     root_dir = require("lspconfig/util").root_pattern("go.work", "go.mod", ".git"),
 }))
 
+-- Ansible
+require("lspconfig").ansiblels.setup(config())
+
 vim.diagnostic.config({ virtual_text = true })
