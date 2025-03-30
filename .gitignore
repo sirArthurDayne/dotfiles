@@ -4,3 +4,4 @@ nvim-lua/.config/nvim/plugin/packer_compiled.lua
 nvim-lua/.config/nvim/lazy-lock.json
 nvim2025/.config/nvim/lazy-lock.json
 nvim-lua/.config/nvim/lua/krosis/packer.lua.backup
+tmux/.config/tmux/plugin
