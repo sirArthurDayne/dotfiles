@@ -28,6 +28,7 @@ return {
             vim.keymap.set("n", "<C-h>", builtin.help_tags, { desc = "Telescope help tags" })
             vim.keymap.set("n", "<space>fg", builtin.live_grep, { desc = "Telescope live grep" })
             vim.keymap.set("n", "<C-f>", builtin.git_files, { desc = "Telescope git repo" })
+            vim.keymap.set("n", "<leader>m", builtin.man_pages, { desc = "Search man pages" })
             vim.keymap.set("n", "<space>n", function()
                     builtin.find_files({ cwd = vim.fn.stdpath("config") })
                 end,

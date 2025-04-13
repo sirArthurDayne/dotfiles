@@ -33,4 +33,5 @@ require("lazy").setup({
     require("plugins.blink"),
     require("plugins.lsp"),
     require("plugins.compile"),
+    require("plugins.harpoon"),
 })
