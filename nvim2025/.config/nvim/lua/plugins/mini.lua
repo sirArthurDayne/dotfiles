@@ -12,6 +12,8 @@ return {
             surround.setup {}
             local completion = require("mini.completion")
             completion.setup {}
+            local indent_scope = require("mini.indentscope")
+            indent_scope.setup {}
             require('mini.icons').setup()
             MiniIcons.tweak_lsp_kind()         --enable in lsp completion
             MiniIcons.mock_nvim_web_devicons() -- allow integration to plugint that use nvim_web_devicons
