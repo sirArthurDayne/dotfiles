@@ -20,12 +20,20 @@ return {
                         if detail then
                             require("oil").set_columns({ "icon", "permissions", "size", "mtime" })
                         else
-                            require("").set_columns({ "icons" })
+                            require("oil").set_columns({ "icons" })
                         end
                     end,
                 },
             },
         }
         vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+        vim.keymap.set("n", "<leader>-", require("oil").toggle_float, { desc = "toggle float window for Oil" })
+
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = "oil",
+            callback = function()
+                vim.opt_local.cursorline = true
+            end
+        })
     end
 }

@@ -34,4 +34,6 @@ require("lazy").setup({
     require("plugins.lsp"),
     require("plugins.compile"),
     require("plugins.harpoon"),
+    require("plugins.todo-comments"),
+    require("plugins.noice"),
 })
