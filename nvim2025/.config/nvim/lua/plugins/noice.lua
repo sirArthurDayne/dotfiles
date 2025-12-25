@@ -47,8 +47,20 @@ return {
                 messages = { enabled = false, },
                 notify = { enabled = false, },
                 health = { checker = false, },
-                popupmenu = { enabled = true, },
+                popupmenu = { enabled = false, },
                 signature = { enabled = false, },
+                lsp = {
+                    progress = {
+                        enabled = false,
+                    },
+                    hover = {
+                        enabled = false,
+                    },
+                    signature = {
+                        enabled = false,
+                    },
+                    message = { enabled = false, },
+                },
             })
         end
     }

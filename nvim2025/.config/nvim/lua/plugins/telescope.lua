@@ -35,6 +35,7 @@ return {
             pcall(require("telescope").load_extension, "fzf")
             pcall(require("telescope").load_extension, "ui-select")
             pcall(require("telescope").load_extension, "themes")
+            pcall(require("telescope").load_extension, "noice")
 
             local builtin = require("telescope.builtin")
             vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Telescope find files" })
