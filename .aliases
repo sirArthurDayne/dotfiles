@@ -1,0 +1,38 @@
+# Add aliases here
+alias vi=nvim
+alias glog="git log --color --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'"
+alias glf="git log --one-line --graph --decorate | fzf"
+alias gs="git st"
+alias gclone="git clone --recurse-submodules"
+
+manf() {
+  local use_tldr=false
+  if [[ "$1" == "--tldr" ]]; then
+    use_tldr=true
+  fi
+
+  if $use_tldr; then
+
+    if ! command -v tldr >/dev/null; then
+      echo "tldr not installed. Run: sudo pacman -S tldr"
+      return 1
+    fi
+
+    tldr --list | fzf | xargs -r tldr
+  else
+      man -k . | fzf | awk '{print $1, $2}' | xargs -r man
+  fi
+}
+
+
+#clipboard setup
+if [ "$XDG_SESSION_TYPE" = "wayland" ] || [ -n "$WAYLAND_DISPLAY" ]; then
+    alias pbcopy='wl-copy'
+    alias pbpaste='wl-paste'
+elif [ "$XDG_SESSION_TYPE" = "x11" ] || [ -n "$DISPLAY" ]; then
+    alias pbcopy='xsel --input --clipboard'
+    alias pbpaste='xsel --output --clipboard'
+else
+    echo "Unknow display server - pbcopy/pbpaste not set."
+fi
+
