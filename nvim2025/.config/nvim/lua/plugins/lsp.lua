@@ -119,7 +119,7 @@ return {
                 end,
                 -- below define targeted overrides for specific servers. ["lua_ls"] = function() <DEFINE_TABLE> end
             }
-            require("mason-lspconfig").setup_handlers(handlers)
+            require("mason-lspconfig").setup(handlers)
         end,
     }
 }
